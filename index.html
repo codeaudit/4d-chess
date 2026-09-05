@@ -1,5 +1,6 @@
+
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f6f1"><meta name="description" content="Learn spatial 4D chess with guided practice, move explanations, and safe previews for either side."><title>4D chess · Learning edition</title><style>:root{color-scheme:light;--paper:#f5f6f1;--card:#fffefb;--ink:#24382f;--muted:#5e6e61;--line:#dbe1d5;--green:#32654c;--green-light:#e9f1e8;--blue:#376c9b;--blue-light:#eaf1f8;--amber:#b67c30;--amber-light:#f4e8ca;--red:#ac503f;--red-light:#faeee9;--shadow:0 5px 22px #263b2710;--radius:16px}
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f6f1"><meta name="description" content="Learn spatial 4D chess with guided practice, move explanations, and safe previews for either side, and interactive checkmate examples."><title>4D chess · Learning edition</title><style>:root{color-scheme:light;--paper:#f5f6f1;--card:#fffefb;--ink:#24382f;--muted:#5e6e61;--line:#dbe1d5;--green:#32654c;--green-light:#e9f1e8;--blue:#376c9b;--blue-light:#eaf1f8;--amber:#b67c30;--amber-light:#f4e8ca;--red:#ac503f;--red-light:#faeee9;--shadow:0 5px 22px #263b2710;--radius:16px}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,select,input{font:inherit}button,select,summary,a{touch-action:manipulation}button,select{color:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:default}button,a,input,select,summary,[tabindex]{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--amber);outline-offset:3px}button{border:1px solid var(--line);border-radius:8px;background:var(--card);padding:9px 13px;min-height:40px;font-weight:550;transition:background .15s,border-color .15s}button:hover:not(:disabled){background:#edf1e8;border-color:#b6c6b0}button.primary{background:var(--green);border-color:var(--green);color:white}button.primary:hover:not(:disabled){background:#234f3a}button.ghost{border-color:transparent;background:transparent}button.small{font-size:12px;min-height:34px;padding:7px 10px}button.icon-button{width:40px;padding:6px;font-size:20px}select{min-height:40px;border:1px solid var(--line);border-radius:8px;background:var(--card);padding:8px 10px;max-width:100%}a{color:var(--green);text-underline-offset:3px}h1,h2,h3,h4,p{margin:0}svg{display:block}h2{font-size:18px;line-height:1.4}h3{font-size:16px}small{font-size:12px}[hidden]{display:none!important}.muted{color:var(--muted)}.eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:750;color:var(--muted)}.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip-link{position:absolute;left:12px;top:-80px;z-index:30;background:white;padding:10px}.skip-link:focus{top:12px}.app-shell{max-width:1280px;margin:auto;padding:0 30px 26px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:86px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:13px}.brand-mark{width:38px;height:38px;color:var(--green)}.brand h1{font:600 23px/1.1 Georgia,serif;letter-spacing:-.03em}.brand small{display:block;margin-top:4px;letter-spacing:.12em;font-size:9px;font-weight:650;text-transform:uppercase;color:var(--muted)}.top-actions{display:flex;gap:8px;align-items:center}.intro{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 0 22px}.intro h2{font:normal clamp(24px,2.4vw,32px)/1.2 Georgia,serif;letter-spacing:-.035em}.intro p{margin-top:7px;color:var(--muted);font-size:13px}.dimension-key{display:flex;gap:7px;flex-shrink:0}.dimension-key span{border:1px solid var(--line);background:var(--card);border-radius:7px;min-width:39px;text-align:center;padding:6px 10px;font:600 13px ui-monospace,monospace}.dimension-key span:last-child{color:var(--amber);border-color:#e2cc9c;background:#fbf5e7}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 348px;gap:28px;align-items:start}.game-area{min-width:0}.game-toolbar{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap}.turn-indicator{display:flex;gap:9px;align-items:center;min-width:0}.turn-token{width:13px;height:13px;border:1.5px solid #50664d;border-radius:50%;background:#fff6e1;flex-shrink:0}.turn-token.black{background:#284739}.turn-copy strong{font-size:14px;display:block;font-weight:650}.turn-copy small{display:block;color:var(--muted);font-size:11px}.game-controls{display:flex;gap:5px;align-items:center}.game-controls button{font-size:12px;padding:8px 10px;min-height:36px}.segmented{display:inline-flex;gap:2px;background:#e8ece3;border:1px solid #d7dfd1;border-radius:9px;padding:3px}.segmented button{min-height:29px;padding:5px 10px;border:0;border-radius:6px;font-size:12px;background:transparent}.segmented button[aria-pressed=true]{background:var(--card);box-shadow:0 1px 4px #1b35271a;color:var(--green)}.segmented button[data-interaction=inspect][aria-pressed=true]{color:var(--blue)}.board-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px 16px;box-shadow:var(--shadow)}.board-topline{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:14px;font-size:11px;color:var(--muted)}.board-topline strong{font-weight:600;color:var(--ink)}.board-topline .mono{font-family:ui-monospace,monospace}.matrix{position:relative;display:grid;grid-template-columns:20px minmax(0,1fr) minmax(0,1fr);gap:12px 16px}.axis-label{text-align:center;font-size:11px;font-weight:600;color:var(--muted)}.axis-label small{font-size:9px;color:#84917e;font-weight:400;margin-left:4px}.w-label{writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;align-self:center;justify-self:center;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.03em}.slice{min-width:0;position:relative}.slice-head{display:flex;justify-content:space-between;gap:5px;align-items:center;font-size:10px;min-height:22px;margin-bottom:5px;color:var(--muted)}.slice-head strong{font-weight:500}.slice-count{padding:1px 6px;border-radius:10px;background:var(--green-light);color:var(--green);font-weight:650;font-size:9px;white-space:nowrap}.slice-count.preview{background:var(--blue-light);color:var(--blue)}.board-wrap{position:relative;padding-left:11px}.ranks{position:absolute;left:0;top:0;bottom:0;display:grid;grid-template-rows:repeat(4,1fr);align-items:center;font-size:9px;color:var(--muted)}.board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));aspect-ratio:1;border:1px solid #aabca2;border-radius:5px;overflow:hidden}.cell{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:1;min-width:0;min-height:0;padding:0;border:none;border-radius:0;background:#e9edde;isolation:isolate;transition:background .12s;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}.cell.dark{background:#adbf9f}.cell:hover{background:#d6dfc7!important}.cell.dark:hover{background:#bbcfac!important}.cell.last{background:#dedeb5}.cell.last.dark{background:#bac498}.cell.selected,.cell.selected:hover{background:#efcf8e!important;box-shadow:inset 0 0 0 2px #bf8b38}.cell.selected.opponent{box-shadow:inset 0 0 0 2px var(--blue)}.cell.checked{background:#e7ad97!important}.cell.focus-target{box-shadow:inset 0 0 0 3px var(--green)}.cell.focus-target.opponent{box-shadow:inset 0 0 0 3px var(--blue)}.cell.invalid{box-shadow:inset 0 0 0 3px var(--red)}.cell.hint{outline:3px dashed var(--amber);outline-offset:-4px;z-index:1}.cell:focus-visible{outline-offset:-3px;z-index:2}.piece{width:78%;height:78%;max-width:67px;pointer-events:none;overflow:visible;filter:drop-shadow(0 1px 1px #22382020)}.white{color:#fffae9;--stroke:#4a604e;--detail:#4a604e}.black{color:#2b493b;--stroke:#193529;--detail:#d8e3ce}.marker{position:absolute;pointer-events:none;z-index:2}.marker.dot{width:19%;height:19%;border-radius:50%;background:var(--green);opacity:.85;box-shadow:0 0 0 3px #ffffff4d}.marker.diamond{width:17%;height:17%;border-radius:2px;border:2px solid var(--blue);background:#f4f8fd8f;transform:rotate(45deg)}.marker.ring{width:85%;height:85%;border:3px solid var(--red);border-radius:50%}.marker.ring.preview{border:3px dashed var(--blue)}.marker.control{right:6%;bottom:4%;width:17%;height:17%;font:700 17px/1 ui-monospace,monospace;color:#8d542e;display:grid;place-items:center}.threat-square{box-shadow:inset 0 0 0 3px var(--blue)!important}.attacker-square{background:#e9b8a6!important}.files{padding:3px 0 0 11px;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;color:var(--muted);font-size:9px}.route-overlay{position:absolute;inset:0;pointer-events:none;z-index:4;width:100%;height:100%;overflow:visible}.moving-token{position:absolute;pointer-events:none;z-index:5;display:grid;place-items:center}.moving-token .piece{width:100%;height:100%}.legend{display:flex;gap:12px;align-items:center;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:14px;padding-top:12px;font-size:10px;color:var(--muted)}.legend-item{display:inline-flex;align-items:center;gap:6px}.legend-dot{width:8px;height:8px;border-radius:50%;background:var(--green)}.legend-ring{width:12px;height:12px;border:2px solid var(--red);border-radius:50%}.legend-diamond{width:9px;height:9px;border:2px solid var(--blue);transform:rotate(45deg);border-radius:1px}.legend-selected{width:10px;height:10px;background:#efcf8e;border:1px solid var(--amber);border-radius:2px}.board-instruction{font-size:11px;color:var(--muted);padding:10px 3px 0;line-height:1.6}.board-instruction strong{color:var(--ink);font-weight:600}.sidebar{min-width:0}.panel{border:1px solid var(--line);background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}.panel+.panel,.sidebar>details{margin-top:16px}.coach-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-bottom:13px;border-bottom:1px solid var(--line);margin-bottom:15px}.coach-heading h2{font-size:13px;font-weight:650;display:flex;align-items:center;gap:7px}.coach-heading h2::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green)}.coach-heading button{min-height:28px;padding:3px 6px;font-size:11px}.empty-coach h3{font:normal 24px/1.25 Georgia,serif;letter-spacing:-.02em;margin:14px 0 10px}.empty-coach p{color:var(--muted);font-size:12px;line-height:1.8}.empty-coach .primary{margin-top:16px;width:100%;font-size:12px}.axis-explainer{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:19px 0 4px}.axis-explainer>div{padding:9px 10px;border:1px solid var(--line);border-radius:8px;display:flex;gap:9px;align-items:center}.axis-explainer b{font:600 16px ui-monospace,monospace;color:var(--green)}.axis-explainer>div:last-child b{color:var(--amber)}.axis-explainer span{font-size:10px;line-height:1.6;color:var(--muted)}.piece-heading{display:flex;gap:10px;align-items:center;margin-bottom:10px}.piece-avatar{width:49px;height:51px;background:#edf1e7;border-radius:10px;display:grid;place-items:center;flex-shrink:0}.piece-avatar .piece{width:45px;height:45px}.piece-heading h3{font-size:19px;line-height:1.25;font-weight:600}.piece-heading small{display:block;color:var(--muted);font:11px ui-monospace,monospace;margin-top:5px}.piece-tag{display:inline-flex;align-items:center;padding:4px 8px;background:var(--green-light);color:var(--green);border-radius:5px;font-size:10px;font-weight:650;margin-bottom:11px}.piece-tag.preview{background:var(--blue-light);color:var(--blue)}.rule-summary{font-size:12px;line-height:1.8;color:var(--muted)}.rule-formula{display:block;font:600 11px ui-monospace,monospace;color:var(--ink);margin-bottom:5px}.preview-notice{font-size:10px;color:var(--blue);line-height:1.65;margin-top:10px}.move-stats{display:flex;gap:18px;padding:12px 0;margin:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.move-stats>div{display:flex;gap:5px;align-items:baseline}.move-stats b{font:normal 22px/1.1 Georgia,serif}.move-stats span{font-size:10px;color:var(--muted)}.controls-toggle{display:flex;gap:7px;align-items:flex-start;font-size:11px;color:var(--muted);cursor:pointer;min-height:30px}.controls-toggle input{margin:3px 0 0;accent-color:var(--green)}.control-help{font-size:10px;color:#8d542e;line-height:1.6;margin:0 0 12px}.destination-heading{display:flex;justify-content:space-between;align-items:center;margin:8px 0}.destination-heading h4{font-size:11px;font-weight:650}.destination-heading small{font-size:9px;color:var(--muted)}.destinations{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;max-height:165px;overflow:auto;padding:2px 3px 3px 0;scrollbar-width:thin}.destination{font:10px/1.4 ui-monospace,monospace;text-align:left;min-height:35px;padding:6px 7px;white-space:nowrap;display:flex;gap:5px;align-items:center}.destination.capture{color:var(--red);background:#fcf6f2}.destination.preview{color:var(--blue)}.destination[aria-pressed=true]{background:var(--amber-light);border-color:#c8a86a}.destination .dest-mark{font-size:12px;color:var(--green)}.destination.preview .dest-mark{color:var(--blue)}.destination.capture .dest-mark{color:var(--red)}.no-moves{font-size:12px;line-height:1.75;padding:12px;background:var(--paper);border-radius:8px}.preview-card{padding:12px;margin-top:14px;border:1px solid var(--line);border-radius:10px;background:#f6f8f2}.preview-card.bad{border-color:#e5c3b7;background:var(--red-light)}.preview-card h4{font-size:12px;margin-bottom:6px}.preview-card>p{font-size:11px;line-height:1.8;color:var(--muted)}.coordinate-chips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;margin:10px 0}.coordinate-chip{font-size:10px;padding:6px 3px;border:1px solid var(--line);border-radius:6px;text-align:center;background:var(--card);line-height:1.6}.coordinate-chip b{display:block;font:500 9px ui-monospace,monospace;color:var(--muted)}.coordinate-chip span{font:600 10px ui-monospace,monospace;white-space:nowrap}.coordinate-chip.changed{background:var(--amber-light);border-color:#dec493}.coordinate-chip.changed b{color:#8b6127}.preview-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.preview-actions button{font-size:11px;min-height:34px;padding:7px 10px}.capture-request{border:1px solid #dab6a8;border-radius:9px;padding:12px;background:var(--red-light);margin-bottom:14px}.capture-request p{font-size:11px;line-height:1.7;color:#784b3b}.capture-request strong{font-size:12px;display:block;margin-bottom:3px}.capture-request .request-actions{display:flex;gap:6px;margin-top:10px}.capture-request button{font-size:11px;min-height:34px;padding:7px 9px}.capture-request button:first-child{background:var(--red);color:white;border-color:var(--red)}.coach-footnote{font-size:10px;color:var(--muted);margin-top:12px;line-height:1.7}.practice-nudge{padding:15px 16px;box-shadow:none;background:#edf2e8;display:flex;align-items:center;gap:13px}.practice-nudge p{font-size:11px;color:var(--muted);margin-top:3px}.practice-nudge h3{font-size:12px}.practice-nudge button{margin-left:auto;flex-shrink:0;font-size:11px;background:transparent;border-color:#bccbb2}.spatial-panel{padding:0;overflow:hidden}.spatial-panel>summary{padding:14px 18px;font-size:12px;font-weight:650;cursor:pointer;display:flex;align-items:center;justify-content:space-between;list-style:none}.spatial-panel>summary::after{content:'+';font-size:16px;color:var(--muted)}.spatial-panel[open]>summary::after{content:'−'}.spatial-panel>summary::-webkit-details-marker{display:none}.spatial-content{padding:0 14px 14px}.spatial-toolbar{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:10px}.spatial-toolbar button{min-height:26px;padding:3px 6px;font-size:10px}.space-svg{width:100%;aspect-ratio:440/350;touch-action:none;cursor:grab;user-select:none;overflow:visible}.space-svg:active{cursor:grabbing}.space-svg [data-square]{cursor:pointer}.space-caption{font-size:10px;line-height:1.7;color:var(--muted)}.spatial-key{display:flex;gap:12px;font-size:9px;color:var(--muted);margin-top:5px}.threat-panel{border:1px solid #b8cfdf;background:var(--blue-light);padding:14px 16px;border-radius:10px;margin-top:12px}.threat-panel>div{display:flex;justify-content:space-between;align-items:center;gap:10px}.threat-panel h3{font-size:13px;color:#315c7c}.threat-panel p{font-size:11px;color:#486376;line-height:1.8;margin-top:6px}.threat-panel button{font-size:11px;min-height:30px;padding:4px 8px}.lesson-banner{border:1px solid #c9d8bd;background:#edf3e7;border-radius:12px;padding:16px 18px;margin-bottom:18px}.lesson-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.lesson-top strong{font-size:10px;color:var(--green);letter-spacing:.09em;text-transform:uppercase}.lesson-top button{min-height:28px;padding:4px 7px;font-size:10px}.lesson-progress{display:flex;gap:5px;margin:9px 0 11px}.lesson-step{flex:1;min-height:6px;height:6px;padding:0;border:0;border-radius:10px;background:#d6dfce;position:relative}.lesson-step::after{content:'';position:absolute;inset:-7px 0}.lesson-step[aria-current=step]{background:var(--green)}.lesson-step.complete{background:#83a177}.lesson-banner h3{font:normal 23px/1.3 Georgia,serif;margin:3px 0 7px;letter-spacing:-.025em}.lesson-banner p{font-size:12px;line-height:1.8;color:#52664b}.lesson-task{margin-top:10px;border-top:1px solid #d4dfcb;padding-top:10px;display:flex;gap:9px;align-items:flex-start}.task-icon{display:grid;place-items:center;width:20px;height:20px;border:1px solid #a6be93;border-radius:50%;font-size:10px;flex-shrink:0;margin-top:1px}.lesson-banner.completed .task-icon{background:var(--green);color:white;border-color:var(--green)}.lesson-actions{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:12px}.lesson-actions div{display:flex;gap:6px}.lesson-actions button{font-size:11px;min-height:32px;padding:6px 10px}.lesson-note{font-size:10px!important;margin-top:10px}.bottom-bar{display:flex;justify-content:space-between;align-items:center;gap:14px;border-top:1px solid var(--line);padding:19px 0 0;margin-top:27px;font-size:10px;color:var(--muted)}.bottom-bar a{color:var(--muted)}.bottom-bar button{padding:3px 6px;min-height:26px;font-size:10px}.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:35;max-width:min(590px,calc(100% - 28px));background:#263f31;color:#fffef4;padding:12px 18px;border-radius:10px;box-shadow:0 5px 22px #0002;font-size:12px;line-height:1.7;pointer-events:none}.toast.error{background:#854632}.toast.info{background:#325977}dialog{margin:auto;max-height:88vh;width:min(740px,calc(100% - 28px));padding:0;border:1px solid var(--line);border-radius:18px;background:var(--card);color:var(--ink);box-shadow:0 20px 80px #0b261d33}dialog::backdrop{background:#1d302966;backdrop-filter:blur(3px)}.dialog-inner{padding:28px}.dialog-header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:18px}.dialog-header h2{font:normal 30px/1.2 Georgia,serif;letter-spacing:-.03em}.dialog-header .eyebrow{margin-bottom:6px}.dialog-inner p{color:var(--muted);font-size:13px;line-height:1.8}.dialog-inner h3{font-size:15px;margin:23px 0 9px}.rules-overview{padding:15px;background:var(--green-light);border-radius:9px;font-size:12px;line-height:1.8;color:#456047}.rules-overview code{font-family:ui-monospace,monospace;font-size:12px}.rules-table{width:100%;border-collapse:collapse;margin-top:16px;font-size:12px}.rules-table th,.rules-table td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}.rules-table th{font-weight:600;width:77px}.rules-table td{color:var(--muted);line-height:1.75}.rules-table .piece-rule{font-weight:650;color:var(--ink);display:block;margin-bottom:3px}.rules-table .rule-try{font-size:10px;min-height:28px;padding:5px 7px;white-space:nowrap}.dialog-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:23px}.history-list{max-height:50vh;overflow:auto}.history-entry{display:grid;grid-template-columns:30px 1fr;gap:7px;padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}.history-entry>span{color:var(--muted)}.history-entry small{display:block;font:11px ui-monospace,monospace;margin-top:5px;color:var(--muted)}.keyboard-grid{display:grid;grid-template-columns:130px 1fr;gap:8px 15px;font-size:12px;margin-top:15px;color:var(--muted)}kbd{font:11px ui-monospace,monospace;background:#edf0e8;padding:2px 5px;border:1px solid var(--line);border-radius:4px;color:var(--ink)}.storage-note{font-size:10px;color:var(--red);margin-top:10px}
 @media(min-width:1500px){.app-shell{max-width:1380px}.workspace{grid-template-columns:minmax(0,1fr) 375px;gap:36px}.board-card{padding:21px 27px}}
 @media(max-width:1050px){.app-shell{padding:0 22px 24px}.workspace{grid-template-columns:minmax(0,1fr) 310px;gap:20px}.board-card{padding:14px 12px}.matrix{gap:9px 11px;grid-template-columns:16px 1fr 1fr}.panel{padding:17px}.spatial-panel{padding:0}.game-toolbar{gap:9px}.game-controls{gap:4px}.game-controls button{padding:7px}.dimension-key{display:none}.destinations{grid-template-columns:repeat(2,1fr)}}
@@ -9,6 +10,17 @@
 /* Let the mode selector shrink before a narrow phone toolbar overflows. */
 @media(max-width:480px){.top-actions select{min-width:0;flex:1 1 0}.top-actions button{white-space:nowrap;flex-shrink:0}}
 @media(max-width:480px){.lesson-actions{flex-wrap:wrap}.lesson-actions>div{flex-wrap:wrap}.lesson-actions>#lesson-next{margin-left:auto}}
+
+/* Checkmate lab: uses the same pieces, coordinates, and board controls as play. */
+.mate-banner{margin:24px 0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;scroll-margin-top:12px}
+.mate-intro{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}.mate-intro h2{font:normal 28px/1.2 Georgia,serif;margin:5px 0 7px;letter-spacing:-.03em}.mate-intro p:last-child{color:var(--muted);font-size:12px}.mate-intro>button{flex-shrink:0}.mate-cases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:18px 0}.mate-case-button{display:flex;align-items:center;gap:9px;text-align:left;min-width:0;padding:10px 12px;background:var(--paper);border-radius:8px}.mate-case-button .case-number{font:normal 19px/1 Georgia,serif;color:var(--muted)}.mate-case-button strong{display:block;font-size:12px}.mate-case-button small{display:block;font-size:9px;color:var(--muted);margin-top:1px;letter-spacing:.07em;text-transform:uppercase}.mate-case-button[aria-pressed=true]{background:var(--green-light);border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green)}.mate-case-button[aria-pressed=true] .case-number{color:var(--green)}.mate-case-button.comparison{border-style:dashed}.mate-case-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}.mate-case-heading h3{font:normal 24px/1.25 Georgia,serif;letter-spacing:-.02em;margin-top:4px}.mate-case-nav{display:flex;gap:8px;align-items:center;flex-shrink:0}.mate-case-nav button{padding:4px;width:34px;min-height:34px}.mate-case-nav span{font:11px ui-monospace,monospace;color:var(--muted)}#mate-description{max-width:850px;color:var(--muted);font-size:13px;margin-top:9px}.mate-stage-bar{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin:17px 0 10px}.mate-try-actions{display:flex;gap:7px}.mate-try-actions button{font-size:12px}.mate-task{font-size:13px;padding:10px 12px;border-radius:7px;background:#f0f3ea;border-left:3px solid var(--green)}.mate-task.success{background:var(--green-light)}.mate-save-note{font-size:10px;color:var(--muted);margin-top:9px}.studying-mate .intro{display:none}.studying-mate .workspace{grid-template-columns:minmax(0,1fr) 370px}.studying-mate .game-controls .segmented,.studying-mate #undo-button{display:none}.studying-mate .topbar{gap:12px}.studying-mate .board-card{padding:15px 17px}.mate-proof{padding:20px}.mate-proof-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}.mate-proof-top .eyebrow{font-size:9px;letter-spacing:.1em}.mate-verdict-tag{font-size:9px;letter-spacing:.06em;font-weight:700;text-transform:uppercase;border-radius:4px;padding:3px 6px;background:#f6e5dd;color:#9b4835;white-space:nowrap}.mate-verdict-tag.safe{background:var(--blue-light);color:var(--blue)}.mate-verdict-tag.waiting{background:var(--green-light);color:var(--green)}#mate-proof-title{font:normal 23px/1.2 Georgia,serif;letter-spacing:-.025em}#mate-proof-intro{color:var(--muted);font-size:12px;margin-top:8px}.mate-facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:15px 0 17px;padding:13px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.mate-facts div{display:flex;gap:7px;align-items:baseline}.mate-facts strong{font:normal 26px/1 Georgia,serif}.mate-facts span{color:var(--muted);font-size:10px}.mate-proof-step+.mate-proof-step{border-top:1px solid var(--line);margin-top:15px;padding-top:15px}.mate-proof-step h3{display:flex;gap:8px;align-items:center;font-size:12px;margin-bottom:6px}.mate-proof-step h3>span{display:grid;place-items:center;border:1px solid var(--line);width:21px;height:21px;border-radius:50%;font-size:10px;font-weight:500;flex-shrink:0}.mate-proof-step h3>b{font-weight:650}.mate-proof-step>p,#mate-before-copy{font-size:12px;color:var(--muted)}.mate-checkers{display:grid;gap:6px;margin-top:9px}.mate-checkers button{font-size:11px;text-align:left;min-height:36px;background:#fcf5ef;border-color:#e8cdc0;display:flex;gap:8px;align-items:center;padding:7px 9px}.mate-checkers button .piece{width:27px;height:27px;flex-shrink:0}.mate-checkers button small{display:block;font-size:10px;color:var(--muted)}.mate-checkers button span{min-width:0}.mate-map-controls{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin:9px 0}.mate-map-controls label{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:10px;cursor:pointer}.mate-map-controls input{accent-color:var(--green)}.mate-map-controls .small{font-size:10px;min-height:30px;padding:4px 6px}.mate-escapes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.mate-escape{padding:6px 4px;min-height:34px;display:flex;align-items:center;justify-content:center;gap:4px;font:10px ui-monospace,monospace;border-color:#e5cec0;background:#fcf5ef;color:#8c4b36}.mate-escape.safe{color:var(--green);background:var(--green-light);border-color:#9bbb9c}.mate-escape.friendly{background:#f1efdf;color:#776c3b;border-color:#c8c098}.mate-escape[aria-pressed=true]{box-shadow:inset 0 0 0 1px currentColor}.mate-mini-legend{display:flex;gap:10px;font-size:9px!important;margin-top:7px}.mate-defenses{display:grid;gap:6px;margin-top:9px}.mate-defenses button{font-size:11px;padding:8px;text-align:left;min-height:36px}.mate-defenses button small{display:block;color:var(--muted);font-size:10px}.mate-takeaway{padding:12px;margin-top:15px;border-radius:7px;background:var(--green-light);font-size:12px;color:var(--green);border-left:3px solid var(--green)}#mate-before-help h3{font-size:15px;margin-bottom:7px}#mate-show-target{margin-top:12px}.mate-probe{margin-bottom:14px;padding:16px 18px;border:1px solid #d5bcab;border-left:4px solid var(--amber);border-radius:9px;background:#fff9ee;scroll-margin-top:12px}.mate-probe.safe{border-color:#a6bca0;border-left-color:var(--green);background:#f1f7ed}.mate-probe-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.mate-probe-top h3{font-size:14px;line-height:1.4}.mate-probe-top button{font-size:10px;flex-shrink:0;padding:5px 7px;min-height:30px}#mate-probe-copy{margin-top:7px;font-size:12px}.mate-probe-pieces{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.mate-probe-pieces span{font-size:10px;border-radius:4px;background:#f4e3d7;padding:4px 7px}#mate-probe-note{font-size:10px;margin-top:8px}.cell.mate-checker{box-shadow:inset 0 0 0 3px var(--red)}.cell.mate-king{outline:3px solid var(--red);outline-offset:-3px}.cell.mate-king.not-check{outline-color:var(--blue)}.cell.mate-neighbor{background-image:linear-gradient(#9f543109,#9f543109)}.marker.mate-mark{left:4%;top:4%;bottom:auto;right:auto;font:700 13px/1 ui-monospace,monospace;width:17px;height:17px;display:grid;place-items:center;border-radius:4px;color:#964b33;background:#fff8ecd9;border:1px solid #caaa96;z-index:3}.marker.mate-mark.safe{color:var(--green);border-color:#8ba985;background:#edf7e4}.marker.mate-mark.friendly{color:#756522;border-color:#b9ad6e;background:#f7f0d7}.mate-board-legend{display:flex;gap:13px;align-items:center;flex-wrap:wrap;font-size:10px;color:var(--muted);padding-top:9px}.mate-board-legend i{font-style:normal;font-weight:700;color:#984b34}.mate-board-legend .safe{color:var(--green)}.mate-shortcut{background:#fcf5ea;border-color:#e1d4ba;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 17px}.mate-shortcut h3{font-size:12px}.mate-shortcut p{font-size:11px;color:var(--muted);margin-top:3px}.mate-shortcut button{font-size:11px;white-space:nowrap}.mate-rule-intro{margin-top:14px;padding:14px;border:1px solid var(--line);border-radius:8px;background:var(--green-light)}.mate-rule-intro p{font-size:12px}.mate-rule-intro button{margin-top:9px}.studying-mate .coach-panel{margin-top:16px}.top-actions{flex-wrap:wrap;justify-content:flex-end}.top-actions button{white-space:nowrap}#mates-button[aria-pressed=true]{border-color:var(--green);background:var(--green-light);color:var(--green)}
+@media(min-width:1100px){.studying-mate .game-area{position:static}.studying-mate .board-card .matrix{gap:9px 12px}}
+@media(max-width:1050px){.topbar{flex-wrap:wrap;padding:16px 0}.brand{margin-right:auto}.top-actions{gap:6px}.top-actions button,.top-actions select{font-size:12px}.studying-mate .workspace{grid-template-columns:minmax(0,1fr) 320px}.mate-proof{padding:16px}.mate-escapes{gap:4px}.mate-escape{font-size:9px}.mate-banner{padding:18px}}
+@media(max-width:800px){.studying-mate .workspace{grid-template-columns:1fr}.studying-mate .game-area{position:static}.mate-proof{padding:20px}.mate-banner{margin:17px 0;padding:17px}.mate-intro h2{font-size:24px}.mate-case-button{padding:8px}.mate-case-button strong{font-size:11px}.mate-case-button small{font-size:8px}.mate-case-heading h3{font-size:22px}.mate-case-nav span{font-size:10px}.mate-stage-bar{align-items:stretch}.mate-stage-bar .segmented{flex:1}.mate-stage-bar .segmented button{flex:1;min-height:35px}.mate-try-actions{flex:1;justify-content:flex-end}.mate-escapes{grid-template-columns:repeat(4,minmax(0,1fr))}.mate-escape{font-size:11px;min-height:40px}.mate-probe-top h3{font-size:13px}.mate-task{font-size:12px}.top-actions{width:100%;display:flex;justify-content:flex-start}.top-actions select{flex:1;min-width:150px}.top-actions button{flex:1}.mate-map-controls label{font-size:11px}.mate-shortcut{margin-top:16px}}
+@media(max-width:520px){.mate-intro{flex-direction:column;gap:11px}.mate-intro>button{font-size:11px;min-height:32px;padding:5px 10px}.mate-cases{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:15px 0}.mate-case-button strong{font-size:11px}.mate-case-button small{font-size:8px}.mate-case-button .case-number{font-size:16px}.mate-case-button{gap:7px;min-height:46px}.mate-case-heading{align-items:flex-start}.mate-case-heading h3{font-size:21px}.mate-case-nav{gap:4px}.mate-case-nav button{width:28px;min-height:31px}.mate-case-nav span{white-space:nowrap;font-size:9px}.mate-case-heading .eyebrow{font-size:9px}.mate-stage-bar{display:grid;grid-template-columns:1fr;gap:8px}.mate-try-actions button{flex:1;font-size:11px}.mate-stage-bar .segmented button{font-size:11px;padding:5px 7px}.mate-probe{padding:13px}.mate-probe-top{flex-wrap:wrap;gap:5px}.mate-escapes{grid-template-columns:repeat(3,minmax(0,1fr))}.mate-proof{padding:17px}.top-actions select{flex:1 1 100%;width:100%}.top-actions button{font-size:11px;padding:7px 8px}.marker.mate-mark{width:14px;height:14px;font-size:11px}.mate-banner{padding:14px}.mate-intro h2{font-size:23px}.studying-mate .board-card{padding:12px 10px}.mate-proof-top .eyebrow{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.mate-case-button,.mate-escape{transition:none}}
+
+.mate-jumps{display:none}@media(max-width:800px){.mate-jumps{display:flex;gap:7px;margin-top:10px}.mate-jumps button{font-size:11px;flex:1}#mate-proof{scroll-margin-top:12px}}
 </style></head><body><a class="skip-link" href="#game-area">Skip to boards</a>
 <svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs>
 <symbol id="piece-p" viewBox="0 0 64 64"><g fill="currentColor" stroke="var(--stroke)" stroke-width="2.1" stroke-linejoin="round"><circle cx="32" cy="18" r="8"/><path d="M27 27h10l-2 8 7 13H22l7-13zM21 48h22l3 7H18z"/></g></symbol>
@@ -21,7 +33,7 @@
 <main class="app-shell">
   <header class="topbar">
     <div class="brand"><svg class="brand-mark" viewBox="0 0 42 42" fill="none" aria-hidden="true"><path d="M5 13 27 5 37 15 15 23 5 13Zm0 0v19l10 6 22-9V15M15 23v15M27 5v19L5 32M27 24l10 5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="m12 17 15-5 4 5-15 6-4-6Zm0 0v13l4 3 15-6V17M16 23v10" stroke="currentColor" stroke-width="1" opacity=".45"/></svg><div><h1>4D chess</h1><small>Learning edition</small></div></div>
-    <nav class="top-actions" aria-label="Game and learning controls"><label class="sr-only" for="mode">Game mode</label><select id="mode"><option value="ai">Computer · you play White</option><option value="local">Two players · local</option></select><button id="practice-button" class="primary">Learn by playing</button><button id="rules-button">Rules</button></nav>
+    <nav class="top-actions" aria-label="Game and learning controls"><label class="sr-only" for="mode">Game mode</label><select id="mode"><option value="ai">Computer · you play White</option><option value="local">Two players · local</option></select><button id="practice-button" class="primary">Learn by playing</button><button id="mates-button" aria-pressed="false">Checkmate examples</button><button id="rules-button">Rules</button></nav>
   </header>
   <section class="intro" aria-label="Introduction"><div><h2>A new dimension. One move at a time.</h2><p>Click any piece to discover its moves. Yes, your opponent’s too.</p></div><div class="dimension-key" aria-hidden="true"><span>X</span><span>Y</span><span>Z</span><span>W</span></div></section>
   <section id="lesson-banner" class="lesson-banner" aria-labelledby="lesson-title" hidden>
@@ -32,15 +44,41 @@
     <div class="lesson-actions"><div><button id="lesson-back" class="ghost">← Back</button><button id="lesson-retry">Reset lesson</button><button id="lesson-hint" class="ghost">Show target</button></div><button id="lesson-next" class="primary" disabled>Next lesson →</button></div>
     <p class="lesson-note">A separate practice position. Your game is saved and will not be changed.</p>
   </section>
+  <section id="mate-banner" class="mate-banner" aria-labelledby="mate-heading" hidden>
+    <div class="mate-intro"><div><p class="eyebrow">Interactive checkmate lab</p><h2 id="mate-heading" tabindex="-1">Check. No escape. Now you see it.</h2><p>Six ways to finish a game. Two positions that are not checkmate.</p></div><button id="exit-mates">Return to game ↗</button></div>
+    <div id="mate-cases" class="mate-cases" role="group" aria-label="Choose a checkmate example"></div>
+    <div class="mate-case-heading"><div><span id="mate-theme" class="eyebrow"></span><h3 id="mate-case-title"></h3></div><div class="mate-case-nav"><button id="mate-prev" aria-label="Previous example">←</button><span id="mate-counter"></span><button id="mate-next" aria-label="Next example">→</button></div></div>
+    <p id="mate-description"></p>
+    <div class="mate-stage-bar"><div class="segmented" role="group" aria-label="Example position"><button id="mate-before" aria-pressed="false">1 · Before the move</button><button id="mate-after" aria-pressed="true">2 · After the move</button></div><div class="mate-try-actions"><button id="mate-replay">▶ Watch the move</button><button id="mate-try" class="primary">Try the move →</button></div></div>
+    <p id="mate-task" class="mate-task" role="status" aria-live="polite" aria-atomic="true"></p>
+    <div class="mate-jumps"><button id="mate-jump-board" class="small">Go to boards ↓</button><button id="mate-jump-proof" class="small">Read the proof ↓</button></div>
+    <p class="mate-save-note">Composed teaching positions for this variant. Your game and lesson progress stay untouched.</p>
+  </section>
   <div class="workspace">
     <section class="game-area" id="game-area" aria-label="Chess boards">
       <div class="game-toolbar"><div class="turn-indicator"><span id="turn-token" class="turn-token" aria-hidden="true"></span><div class="turn-copy" role="status" aria-live="polite" aria-atomic="true"><strong id="status-title">White to move</strong><small id="status-detail">Choose any piece</small></div></div><div class="game-controls"><div class="segmented" role="group" aria-label="Board interaction"><button data-interaction="play" aria-pressed="true" title="Play moves and inspect either side">Play</button><button data-interaction="inspect" aria-pressed="false" title="Pause play. Inspect either side without moving anything.">Inspect only</button></div><button id="undo-button" title="Undo the last turn">↶ Undo</button><button id="hint-button" title="Show a legal cross-board move">Hint</button></div></div>
+      <section id="mate-probe" class="mate-probe" aria-labelledby="mate-probe-title" hidden>
+        <div class="mate-probe-top"><h3 id="mate-probe-title"></h3><button id="mate-clear-probe" class="small">Back to example ×</button></div><p id="mate-probe-copy" role="status" aria-live="polite" aria-atomic="true"></p><div id="mate-probe-pieces" class="mate-probe-pieces"></div><p id="mate-probe-note" class="muted"></p>
+      </section>
       <div class="board-card"><div class="board-topline"><strong>Four boards, one connected space</strong><span class="mono">4 × 4 × 2 × 2</span></div><div class="matrix" id="matrix"><div aria-hidden="true"></div><div class="axis-label">Z = 0 <small>first layer</small></div><div class="axis-label">Z = 1 <small>second layer</small></div><svg class="route-overlay" id="flat-routes" aria-hidden="true"></svg><div id="motion-token" class="moving-token" hidden aria-hidden="true"></div></div><div class="legend" aria-label="Move highlight legend"><span class="legend-item"><i class="legend-dot" aria-hidden="true"></i>Legal move</span><span class="legend-item"><i class="legend-ring" aria-hidden="true"></i>Capture</span><span class="legend-item"><i class="legend-diamond" aria-hidden="true"></i>Preview only</span><span class="legend-item"><i class="legend-selected" aria-hidden="true"></i>Selected piece</span></div></div>
+      <div id="mate-board-legend" class="mate-board-legend" hidden><span><i>×</i> Unavailable king square</span><span><i class="safe">✓</i> Safe escape</span><span>Red outline = checker · arrows = attacks</span></div>
       <p class="board-instruction" id="board-instruction"><strong>Click a piece → see its moves.</strong> Click a dot to move. For captures, click the ring and confirm. <span class="desktop-tip">Right-click any square to see attackers.</span></p>
       <section class="threat-panel" id="threat-panel" hidden aria-labelledby="threat-title"><div><h3 id="threat-title"></h3><button id="clear-threats">Clear</button></div><p id="threat-context"></p><p id="threat-list"></p></section>
       <p id="storage-note" class="storage-note" hidden>Browser storage is unavailable. This game will not be saved after you close the page.</p>
     </section>
     <aside class="sidebar" aria-label="Learning tools">
+      <section class="panel mate-proof" id="mate-proof" aria-labelledby="mate-proof-title" hidden>
+        <div class="mate-proof-top"><span class="eyebrow">Why this position ends this way</span><span id="mate-verdict-tag" class="mate-verdict-tag"></span></div>
+        <h2 id="mate-proof-title"></h2><p id="mate-proof-intro"></p>
+        <div class="mate-facts"><div><strong id="mate-check-count">0</strong><span>checking pieces</span></div><div><strong id="mate-reply-count">0</strong><span>legal replies</span></div></div>
+        <div id="mate-before-help" hidden><h3>Look one move ahead.</h3><p id="mate-before-copy"></p><button id="mate-show-target" class="small">Show the destination</button></div>
+        <div id="mate-proof-details">
+          <section class="mate-proof-step"><h3><span>1</span><b id="mate-check-title">Is the king in check?</b></h3><p id="mate-check-copy"></p><div id="mate-checkers" class="mate-checkers"></div></section>
+          <section class="mate-proof-step"><h3><span>2</span><b id="mate-escape-title">Can the king escape?</b></h3><p id="mate-escape-copy"></p><div class="mate-map-controls"><label><input id="mate-show-net" type="checkbox" checked> Mark the king’s neighboring squares</label><button id="mate-inspect-king" class="small ghost">Inspect king</button></div><div id="mate-escapes" class="mate-escapes" role="group" aria-label="Test each neighboring king square"></div><p class="mate-mini-legend"><span>× Attacked</span><span>✓ Safe</span><span>■ Friendly piece</span></p></section>
+          <section class="mate-proof-step"><h3><span>3</span><b id="mate-defense-title">Can another piece help?</b></h3><p id="mate-defense-copy"></p><div id="mate-defenses" class="mate-defenses"></div></section>
+          <p id="mate-takeaway" class="mate-takeaway"></p>
+        </div>
+      </section>
       <section class="panel coach-panel" id="coach-panel" aria-labelledby="coach-title">
         <div class="coach-heading"><h2 id="coach-title">Your move coach</h2><button id="clear-selection" class="ghost" hidden>Clear ×</button></div>
         <section id="capture-request" class="capture-request" hidden aria-label="Confirm a capture"><strong id="capture-title"></strong><p id="capture-description"></p><div class="request-actions"><button id="confirm-capture">Confirm capture</button><button id="dismiss-capture">Just inspect</button></div></section>
@@ -57,6 +95,7 @@
           <p class="coach-footnote" id="selection-help">Hover a square, or tap a destination above, to see which coordinates change. Tap an unmarked empty square to learn why it is unavailable.</p>
         </div>
       </section>
+      <section class="panel mate-shortcut" id="mate-shortcut"><div><h3>What does checkmate look like?</h3><p>Six mates. Every escape explained.</p></div><button id="nudge-mates">Explore →</button></section>
       <section class="panel practice-nudge" id="practice-nudge"><div><h3>Learn by doing</h3><p>Eight small lessons. Every piece explained.</p></div><button id="nudge-practice">Start →</button></section>
       <details class="panel spatial-panel" id="spatial-panel" open><summary>See the same position in 3D</summary><div class="spatial-content"><div class="spatial-toolbar"><span>A projection of all four dimensions</span><button id="reset-view" class="ghost">Reset view</button></div><svg class="space-svg" id="space-svg" viewBox="0 0 440 350" role="group" tabindex="0" aria-label="Rotatable tesseract view. Drag to rotate. Click any piece to inspect. Arrow keys rotate; Home resets. Use the flat boards for keyboard square navigation."></svg><p class="space-caption" id="space-caption">W = 0 is the inner cube. W = 1 is the outer cube. Both are the same size in the game.</p><div class="spatial-key"><span>Drag to rotate</span><span>Dashed edges = W direction</span></div></div></details>
     </aside>
@@ -72,7 +111,7 @@
 <tr><th scope="row">Queen</th><td><span class="piece-rule">1–4 axes · equal distances</span>Change any nonempty combination of coordinates equally. Unlike a rook plus bishop alone, this queen can also make three- and four-axis diagonals.</td><td><button class="rule-try" data-try-lesson="3">Try →</button></td></tr>
 <tr><th scope="row">King</th><td><span class="piece-rule">1 step · any combination of axes</span>Change one or more coordinates by one. Never enter an attacked square, including attacks from another board.</td><td><button class="rule-try" data-try-lesson="4">Try →</button></td></tr>
 <tr><th scope="row">Pawn</th><td><span class="piece-rule">Forward on Y · capture on Y + one other axis</span>Move one empty rank toward 4 for White, or toward 1 for Black. Capture one rank forward plus one step on exactly one of X, Z, or W. Automatically become a queen on the final rank.</td><td><button class="rule-try" data-try-lesson="5">Try →</button></td></tr>
-</tbody></table><h3>Blocking, check, and draws</h3><p>Only knights jump. You cannot land on a friendly piece or leave your king in check. Crossing lines in the projection do not block a move unless the full X, Y, Z, W square is actually on its path. Kings are never captured.</p><p style="margin-top:9px">There is no castling, en passant, or initial pawn double move. Each side starts with a king, queen, two rooks, one bishop, one knight, and four pawns. Draws are automatic on stalemate, the third occurrence of the same position with the same side to move, 100 half-moves without a pawn move or capture (50 moves per side), or two bare kings.</p><h3>Inspect without making a move</h3><p>Click any occupied square to inspect that piece, even your opponent’s. Green dots are playable destinations; blue diamonds are previews only. Rings mark captures. Clicking a capturable piece still inspects it and opens a separate capture confirmation. Use <strong>Inspect only</strong> to pause play and the computer. Opponent previews assume that side could move in the current position; they are not a prediction of its next turn.</p><div class="dialog-actions"><button class="primary" data-close="rules-dialog">Back to the board</button></div></div></dialog>
+</tbody></table><div class="mate-rule-intro"><p><strong>Checkmate means the king is in check and its side has no legal reply.</strong> A reply could move the king, capture a checker, or block a checking line. No legal moves without check is stalemate: a draw.</p><button id="rules-mates" class="primary">Explore checkmate examples →</button></div><h3>Blocking, check, and draws</h3><p>Only knights jump. You cannot land on a friendly piece or leave your king in check. Crossing lines in the projection do not block a move unless the full X, Y, Z, W square is actually on its path. Kings are never captured.</p><p style="margin-top:9px">There is no castling, en passant, or initial pawn double move. Each side starts with a king, queen, two rooks, one bishop, one knight, and four pawns. Draws are automatic on stalemate, the third occurrence of the same position with the same side to move, 100 half-moves without a pawn move or capture (50 moves per side), or two bare kings.</p><h3>Inspect without making a move</h3><p>Click any occupied square to inspect that piece, even your opponent’s. Green dots are playable destinations; blue diamonds are previews only. Rings mark captures. Clicking a capturable piece still inspects it and opens a separate capture confirmation. Use <strong>Inspect only</strong> to pause play and the computer. Opponent previews assume that side could move in the current position; they are not a prediction of its next turn.</p><div class="dialog-actions"><button class="primary" data-close="rules-dialog">Back to the board</button></div></div></dialog>
 <dialog id="new-dialog" aria-labelledby="new-title"><div class="dialog-inner"><div class="dialog-header"><h2 id="new-title">A fresh start?</h2><button class="icon-button ghost" data-close="new-dialog" aria-label="Cancel new game">×</button></div><p>This clears your current game and move history. Your lesson progress stays saved.</p><div class="dialog-actions"><button data-close="new-dialog">Keep playing</button><button class="primary" id="confirm-new">Start new game</button></div></div></dialog>
 <dialog id="history-dialog" aria-labelledby="history-title"><div class="dialog-inner"><div class="dialog-header"><h2 id="history-title">Move history</h2><button class="icon-button ghost" data-close="history-dialog" aria-label="Close move history">×</button></div><div class="history-list" id="history-list"></div><div class="dialog-actions"><button data-close="history-dialog">Close</button></div></div></dialog>
 <dialog id="keyboard-dialog" aria-labelledby="keyboard-title"><div class="dialog-inner"><div class="dialog-header"><h2 id="keyboard-title">Find your way around.</h2><button class="icon-button ghost" data-close="keyboard-dialog" aria-label="Close keyboard help">×</button></div><p>All pieces and destination controls work with a keyboard. Clicks on occupied squares always inspect; captures need confirmation.</p><div class="keyboard-grid"><span><kbd>Tab</kbd></span><span>Enter or leave a board or control.</span><span><kbd>Enter</kbd> / <kbd>Space</kbd></span><span>Select a piece or choose the focused destination.</span><span><kbd>Arrow keys</kbd></span><span>Move focus across X and Y within a board.</span><span><kbd>Alt</kbd> + <kbd>Arrows</kbd></span><span>Move between boards along Z and W.</span><span><kbd>Shift</kbd> + <kbd>F10</kbd></span><span>Show attackers on the focused square.</span><span><kbd>Escape</kbd></span><span>Close a dialog, or clear inspection and selection.</span></div><p style="margin-top:18px">In the 3D view: drag to orbit, arrow keys rotate, Shift + Left/Right rolls, and Home resets. On touch screens, long-press a square to see attackers.</p><div class="dialog-actions"><button class="primary" data-close="keyboard-dialog">Got it</button></div></div></dialog>
@@ -234,10 +273,91 @@ function createFourfoldEngine() {
 if (typeof module!=='undefined' && module.exports) module.exports=createFourfoldEngine();
 else globalThis.Fourfold=createFourfoldEngine();
 
+/* Checkmate studies for this exact 4 x 4 x 2 x 2 engine.
+   Composed teaching positions, not claimed to be historical games.
+   Every after-position follows one legal move from its before-position. */
+'use strict';
+function createFourfoldStudies(E) {
+  const square=E.index;
+  const BK=['b','k',[0,3,1,1]];
+  const frame=[BK,['w','k',[2,2,0,0]],['w','q',[0,1,0,0]],['w','p',[0,2,1,1]]];
+  const specs=[
+    {id:'queen',label:'Queen net',title:'One queen. Four dimensions.',kind:'mate',theme:'Supported queen',
+      description:'The queen checks along X + Y + Z + W. She covers every neighboring square, even on the other three boards. Her king protects her from capture.',
+      lesson:'Check every board, not just the king’s current board. A supported queen can close all four-dimensional exits.',
+      pieces:[BK,['w','k',[2,1,0,0]],['w','q',[2,2,0,0]]],from:[2,2,0,0],to:[1,2,0,0]},
+    {id:'rook',label:'Rook through W',title:'A straight check through W.',kind:'mate',theme:'Cross-board rook',
+      description:'The rook checks the same a4 square on the neighboring W board. The queen, pawn, and king cover the exits; the pawn also protects the rook.',
+      lesson:'Different boards do not mean a diagonal. This rook’s checking line changes only W, and there is no square in between on which to block.',
+      pieces:[...frame,['w','r',[0,0,1,0]]],from:[0,0,1,0],to:[0,3,1,0]},
+    {id:'bishop',label:'Bishop diagonal',title:'A diagonal you cannot see in 2D.',kind:'mate',theme:'X + W diagonal',
+      description:'The bishop checks across X + W: one file over and one cube across. The king protects the bishop; the queen and pawn cover the remaining a-file exits.',
+      lesson:'A bishop changes exactly two axes. X + W is as real a diagonal here as X + Y, and this one-step checking line cannot be blocked.',
+      pieces:[...frame,['w','b',[2,2,1,0]]],from:[2,2,1,0],to:[1,3,1,0]},
+    {id:'knight',label:'Knight jump',title:'A jumping check cannot be blocked.',kind:'mate',theme:'X2 + W1 attack',
+      description:'The knight checks with two steps on X and one on W. The king cannot reach the knight, and the other White pieces cover every escape.',
+      lesson:'There is no intervening square in a knight attack. The defense must capture the knight or move the king to safety; neither is available here.',
+      pieces:[...frame,['w','n',[2,1,1,1]]],from:[2,1,1,1],to:[2,3,1,0]},
+    {id:'promotion',mover:'b',label:'Promotion mate',title:'A pawn becomes the mating queen.',kind:'mate',theme:'Automatic promotion',
+      description:'The Black pawn reaches rank 1 and automatically becomes a queen. Its new X + Z + W attack checks the king, while its own king protects it.',
+      lesson:'Evaluate the promoted piece, not the pawn that started the move. The queen’s new directions turn this quiet pawn advance into checkmate.',
+      pieces:[['w','k',[0,0,1,1]],['b','k',[2,1,1,1]],['b','p',[1,1,0,0]]],from:[1,1,0,0],to:[1,0,0,0]},
+    {id:'double',label:'Double check',title:'Capture one checker. The other remains.',kind:'mate',theme:'Discovered double check',
+      description:'Moving the bishop both gives a diagonal check and uncovers the rook’s Y-axis attack. Black can geometrically capture either checker, but neither capture removes both checks.',
+      lesson:'Black’s bishop can capture the White bishop, and Black’s rook can capture the White rook. Inspect those defenses below: each leaves the king attacked.',
+      pieces:[BK,['w','k',[1,1,0,0]],['w','q',[2,3,0,0]],['w','r',[0,0,1,1]],['w','b',[0,1,1,1]],['w','p',[1,2,0,1]],['w','p',[1,2,1,0]],['b','b',[2,1,1,1]],['b','r',[3,0,1,1]]],from:[0,1,1,1],to:[1,2,1,1]},
+    {id:'check',label:'Check ≠ mate',title:'The queen forgot her protection.',kind:'check',theme:'Comparison · one legal reply',
+      description:'The queen checks and covers the empty neighboring squares, but she is unprotected. Black can capture her across all four axes, ending the check.',
+      lesson:'Being in check is not enough. A single legal response prevents checkmate. Here the king captures the queen on b3 [0,0].',
+      pieces:[BK,['w','k',[3,0,1,1]],['w','q',[2,2,0,0]]],from:[2,2,0,0],to:[1,2,0,0]},
+    {id:'stalemate',label:'Stalemate ≠ mate',title:'No moves. But no check, either.',kind:'stalemate',theme:'Comparison · a draw',
+      description:'The king, queen, and pawn cover all of Black’s neighboring squares, but none attacks Black’s current square. Black has no other pieces to move.',
+      lesson:'Checkmate needs check AND no legal reply. No legal moves without check is stalemate: a draw, not a win for White.',
+      pieces:[BK,['w','k',[2,2,0,0]],['w','q',[0,0,0,0]],['w','p',[0,2,1,1]]],from:[0,0,0,0],to:[0,1,0,0]}
+  ];
+  const cases=specs.map((s,index)=>{
+    const before=Array(64).fill(null);
+    for(const [c,t,pos] of s.pieces){const i=square(pos);if(before[i])throw new Error('Overlapping study pieces');before[i]={c,t};}
+    const move={from:square(s.from),to:square(s.to)},after=E.apply(before,move);
+    return {...s,index,before,after,move,mover:s.mover||'w',defender:E.other(s.mover||'w')};
+  });
+  function analyze(b,color) {
+    const king=b.findIndex(p=>p?.c===color&&p.t==='k');
+    if(king<0)throw new Error('A study needs a defending king.');
+    const checkers=E.attackers(b,king,color),replies=E.legal(b,color);
+    const kingMoves=replies.filter(m=>m.from===king),otherMoves=replies.filter(m=>m.from!==king);
+    const neighbors=E.coords.flatMap((_,to)=>{
+      if(!E.paths[king][to]?.king)return [];
+      const explanation=E.explain(b,king,to);
+      const canTest=b[to]?.c!==color&&b[to]?.t!=='k';
+      const after=canTest?E.apply(b,{from:king,to}):null;
+      // Recompute attacks AFTER the king leaves its old square and captures.
+      // This reveals discovered lines and never counts the captured piece.
+      const attackers=after?E.attackers(after,to,color):[];
+      return [{to,legal:explanation.legal,code:explanation.code,reason:explanation.reason,attackers,capture:!!b[to]&&b[to].c!==color}];
+    });
+    const checkingLines=new Set(checkers.flatMap(from=>b[from].t==='n'?[]:E.paths[from][king].between));
+    const defenses=[];
+    for(let from=0;from<64;from++)if(b[from]?.c===color&&b[from].t!=='k') {
+      for(let to=0;to<64;to++) {
+        if(b[to]?.t==='k'||!E.canReach(b,from,to)||(!checkers.includes(to)&&!checkingLines.has(to)))continue;
+        const explanation=E.explain(b,from,to),after=E.apply(b,{from,to});
+        defenses.push({from,to,legal:explanation.legal,code:explanation.code,reason:explanation.reason,capture:checkers.includes(to),attackers:E.attackers(after,king,color)});
+      }
+    }
+    const status=checkers.length?(replies.length?'check':'mate'):(replies.length?'playing':'stalemate');
+    return {king,checkers,replies,kingMoves,otherMoves,neighbors,defenses,status,color,
+      otherPieces:b.flatMap((p,i)=>p?.c===color&&p.t!=='k'?[i]:[])};
+  }
+  return {cases,analyze};
+}
+if(typeof module!=='undefined'&&module.exports)module.exports=createFourfoldStudies(require('./engine.js'));
+else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
+
 /* Learning edition UI. All move entry points validate against the shared engine. */
 'use strict';
 (() => {
-  const E=globalThis.Fourfold, $=id=>document.getElementById(id);
+  const E=globalThis.Fourfold, S=globalThis.FourfoldStudies, $=id=>document.getElementById(id);
   const storageKey='fourfold-learning-v2', progressKey='fourfold-learning-progress-v2';
   const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
   const RULES={
@@ -299,6 +419,8 @@ else globalThis.Fourfold=createFourfoldEngine();
   let board=E.initial(),turn='w',mode='ai',interaction='play',history=[],halfmove=0,keys=[E.key(board,turn)],result=null;
   let selected=null,selectedMoves=[],hoverTarget=null,pinnedTarget=null,hintTarget=null,captureRequest=null,showControls=false,threat=null;
   let lessonIndex=null,lessonDone=false,gameSnapshot=null,completed=new Set();
+  let mateIndex=null,mateStage='after',mateSnapshot=null,mateAnalysis=null,mateProbe=null,mateSolved=false,mateShowNet=true;
+  const inMate=()=>mateIndex!==null;
   let thinking=false,aiTimer=null,aiWorker=null,aiVersion=0;
   let animation=null,animationFrame=0,toastTimer=null,spatial=null,lastHold=null;
   const cells=Array(64),sliceCounts=new Map();
@@ -307,6 +429,7 @@ else globalThis.Fourfold=createFourfoldEngine();
   const activeTarget=()=>hoverTarget??pinnedTarget??hintTarget;
   const inLesson=()=>lessonIndex!==null;
   function canPlayPiece(p) {
+    if(inMate()&&mateStage!=='try')return false;
     return !!p && p.c===turn && interaction==='play' && !result && !animation && !thinking &&
       (inLesson() ? !lessonDone : mode!=='ai'||p.c==='w');
   }
@@ -370,6 +493,8 @@ else globalThis.Fourfold=createFourfoldEngine();
   // capture, preserve the original move separately for explicit confirmation.
   function onSquare(i) {
     if(animation)return;
+    if(inMate()&&mateProbe){clearMateProbe();notify('Back to the example. Click a piece to inspect it.');return;}
+    if(inMate()&&mateStage==='after'&&!board[i]&&(selected===null||selected===mateAnalysis.king)&&mateAnalysis.neighbors.some(n=>n.to===i)){showMateEscape(i);return;}
     threat=null;
     if(board[i]) {
       const oldSelected=selected;
@@ -418,13 +543,19 @@ else globalThis.Fourfold=createFourfoldEngine();
       if(hintTarget===i)classes.push('hint');
       if(threat?.target===i)classes.push('threat-square');
       if(threat?.attackers.includes(i))classes.push('attacker-square');
+      const net=inMate()&&mateStage==='after'&&mateShowNet&&!threat&&!animation;
+      const neighbor=net?mateAnalysis.neighbors.find(n=>n.to===i):null;
+      if(net&&mateAnalysis.checkers.includes(i))classes.push('mate-checker');
+      if(net&&mateAnalysis.king===i){classes.push('mate-king');if(!mateAnalysis.checkers.length)classes.push('not-check');}
+      if(neighbor)classes.push('mate-neighbor');
       cells[i].className=classes.join(' ');
       let html=p?pieceSVG(p):'';
       if(legal)html+=`<span class="marker ${p?'ring'+(isPreview?' preview':''):isPreview?'diamond':'dot'}" aria-hidden="true"></span>`;
       if(controlled)html+='<span class="marker control" aria-hidden="true">+</span>';
+      if(neighbor)html+=`<span class="marker mate-mark${neighbor.legal?' safe':neighbor.code==='friendly'?' friendly':''}" aria-hidden="true">${neighbor.legal?'✓':neighbor.code==='friendly'?'■':'×'}</span>`;
       if(cells[i].innerHTML!==html)cells[i].innerHTML=html;
       if(threat?.preview&&threat.target===i)cells[i].querySelector('.piece')?.setAttribute('opacity','.65');
-      const label=`${E.address(i)}, ${p?pieceName(p):'empty'}${selected===i?', selected':''}${legal?', '+(isPreview?'preview-only ':'legal ')+(p?'capture':'destination'):''}${controlled?', controlled square, not a legal destination':''}${checked.has(i)?', in check':''}`;
+      const label=`${E.address(i)}, ${p?pieceName(p):'empty'}${selected===i?', selected':''}${legal?', '+(isPreview?'preview-only ':'legal ')+(p?'capture':'destination'):''}${controlled?', controlled square, not a legal destination':''}${checked.has(i)?', in check':''}${neighbor?', '+(neighbor.legal?'safe king escape':neighbor.code==='friendly'?'friendly-occupied king neighbor':'attacked king escape square'):''}`;
       cells[i].setAttribute('aria-label',label);cells[i].setAttribute('aria-pressed',String(selected===i));cells[i].title=label;
     }
     for(const [slice,count] of sliceCounts) {
@@ -436,22 +567,23 @@ else globalThis.Fourfold=createFourfoldEngine();
     updateFlatRoutes();
   }
   function renderStatus() {
-    $('mode').value=mode;$('mode').disabled=inLesson();
+    $('mode').value=mode;$('mode').disabled=inLesson()||inMate();
     $('turn-token').className='turn-token'+(turn==='b'?' black':'');
-    $('undo-button').disabled=!history.length||inLesson();
-    $('hint-button').disabled=!!result||!!animation||thinking||inLesson()&&lessonDone;
-    $('new-button').disabled=inLesson();
-    $('history-button').disabled=inLesson();
+    $('undo-button').disabled=!history.length||inLesson()||inMate();
+    $('hint-button').disabled=!!result||!!animation||thinking||inLesson()&&lessonDone||inMate()&&mateStage==='after';
+    $('new-button').disabled=inLesson()||inMate();
+    $('history-button').disabled=inLesson()||inMate();
     document.querySelectorAll('[data-interaction]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.interaction===interaction)));
     let title,detail;
-    if(inLesson()) {title=lessonDone?'Lesson complete':'Practice position';detail=lessonDone?'Explore the result, or continue':`${E.colorName(turn)} to move · your game is untouched`;}
+    if(inMate()) {const c=S.cases[mateIndex];title=mateStage==='after'?(mateAnalysis.status==='mate'?`${E.colorName(c.mover)} wins · example`:mateAnalysis.status==='stalemate'?'Stalemate · example':'Check, not mate · example'):`${E.colorName(c.mover)} to move · example`;detail=animation?'Finishing move in progress':mateStage==='try'?'Practice the indicated move · your game is untouched':mateStage==='before'?'Before the finishing move · preview only':`${E.colorName(c.defender)} to move · ${mateAnalysis.replies.length} legal replies`; }
+    else if(inLesson()) {title=lessonDone?'Lesson complete':'Practice position';detail=lessonDone?'Explore the result, or continue':`${E.colorName(turn)} to move · your game is untouched`;}
     else if(result) {title=result.type==='mate'?`${E.colorName(result.winner)} wins`:'Game drawn';detail=({mate:'Checkmate · no legal escape',stalemate:'Stalemate · no legal moves',bare:'Only two kings remain',fifty:'100 half-moves without a pawn move or capture',repetition:'Third occurrence of the same position'})[result.type];}
     else if(animation) {title=`${pieceName(animation.piece)} moving`;detail=E.address(animation.from)+' → '+E.address(animation.to);}
     else if(thinking) {title='Black is thinking…';detail='Switch to Inspect only to pause';}
     else {title=`${E.colorName(turn)} ${E.inCheck(board,turn)?'in check':'to move'}`;detail=E.inCheck(board,turn)?'Every legal move must protect the king':'Select any piece, on either side';}
-    if(interaction==='inspect')detail=`Play paused · ${E.colorName(turn)} keeps the turn`;
+    if(interaction==='inspect'&&!inMate())detail=`Play paused · ${E.colorName(turn)} keeps the turn`;
     $('status-title').textContent=title;$('status-detail').textContent=detail;
-    $('board-instruction').innerHTML=interaction==='inspect'?'<strong>Inspection only. Nothing will move.</strong> Click either side’s pieces, then any destination. Switch back to Play to resume.':'<strong>Click a piece → see its moves.</strong> Click a dot to move. For captures, click the ring and confirm. <span class="desktop-tip">Right-click any square to see attackers.</span>';
+    $('board-instruction').innerHTML=inMate()?(mateStage==='try'?'<strong>Your turn in a separate practice position.</strong> Play the indicated move. Use Show move for a hint.':'<strong>Inspect either side. Nothing will move.</strong> Tap an escape square in the proof panel to test it. The × marks show the king’s unavailable neighboring squares.'):interaction==='inspect'?'<strong>Inspection only. Nothing will move.</strong> Click either side’s pieces, then any destination. Switch back to Play to resume.':'<strong>Click a piece → see its moves.</strong> Click a dot to move. For captures, click the ring and confirm. <span class="desktop-tip">Right-click any square to see attackers.</span>';
   }
   function renderCaptureRequest() {
     $('capture-request').hidden=!captureRequest;
@@ -474,6 +606,7 @@ else globalThis.Fourfold=createFourfoldEngine();
     $('piece-tag').textContent=isPreview?(board[selected].c!==turn||mode==='ai'&&p.c==='b'?'Opponent · preview only':'Inspection · preview only'):'Your turn · ready to move';
     if(inLesson()&&lessonDone)$('piece-tag').textContent='Lesson complete · preview only';
     if(result&&!inLesson())$('piece-tag').textContent='Game over · preview only';
+    if(inMate())$('piece-tag').textContent=canPlayPiece(p)?'Practice · ready to move':'Example · preview only';
     $('preview-notice').hidden=!isPreview;
     $('preview-notice').textContent=`These moves keep ${E.colorName(p.c)}’s king safe in the current position, ignoring turn order. ${p.c!==turn?'They may change after '+E.colorName(turn)+' moves.':'Play is paused or unavailable; selecting a destination will not move a piece.'}`;
     $('move-count').textContent=selectedMoves.length;
@@ -500,6 +633,7 @@ else globalThis.Fourfold=createFourfoldEngine();
       const geometric=board.some((q,i)=>q?.t!=='k'&&E.canReach(board,selected,i));
       $('no-moves').textContent=geometric?'This piece has movement options, but none keep its king safe. It may be pinned, or its side may need to answer check with another piece.':'No legal moves from here. Friendly pieces, occupied pawn-forward squares, and the board edges can block this piece. Try an empty square to see the exact reason.';
     }
+    if(inMate()&&mateStage==='after'&&p.c===S.cases[mateIndex].defender&&!selectedMoves.length)$('no-moves').textContent=mateAnalysis.status==='mate'?'Checkmate: this side is in check and no piece has a legal reply. Use the proof panel to test each escape.':mateAnalysis.status==='stalemate'?'Stalemate: the king is not in check, but this side has no legal move. The result is a draw.':$('no-moves').textContent;
     renderPreview();
   }
   function renderPreview() {
@@ -530,10 +664,10 @@ else globalThis.Fourfold=createFourfoldEngine();
     spatial?.draw();updateFlatRoutes();
   }
   function renderAll() {
-    renderStatus();renderBoard();renderSelection();renderLesson();renderThreats();spatial?.draw();
+    renderStatus();renderBoard();renderSelection();renderLesson();renderThreats();renderMate();spatial?.draw();
   }
   function storeGame() {
-    if(inLesson())return;
+    if(inLesson()||inMate())return;
     try {localStorage.setItem(storageKey,JSON.stringify({version:2,mode,interaction,moves:history.map(({from,to})=>({from,to}))}));}
     catch {$('storage-note').hidden=false;}
   }
@@ -560,11 +694,11 @@ else globalThis.Fourfold=createFourfoldEngine();
   function snapshot() {return {board,turn,history:history.slice(),halfmove,keys:keys.slice(),mode,interaction};}
   function loadSnapshot(s) {board=s.board;turn=s.turn;history=s.history;halfmove=s.halfmove;keys=s.keys;mode=s.mode;interaction=s.interaction;result=E.outcome(board,turn,halfmove,keys);clearSelection();}
   function commitMove(m,actor='human') {
-    if(!m||animation||result||interaction!=='play'||inLesson()&&lessonDone)return false;
+    if(!m||animation||result||interaction!=='play'||inLesson()&&lessonDone||inMate()&&mateStage!=='try')return false;
     const p=board[m.from];
     if(!p||p.c!==turn)return false;
     if(actor==='human' && !canPlayPiece(p))return false;
-    if(actor==='computer' && (inLesson()||mode!=='ai'||turn!=='b'))return false;
+    if(actor==='computer' && (inMate()||inLesson()||mode!=='ai'||turn!=='b'))return false;
     if(!E.legal(board,turn,m.from).some(n=>n.to===m.to))return false;
     if(inLesson()) {
       const lesson=LESSONS[lessonIndex];
@@ -573,11 +707,12 @@ else globalThis.Fourfold=createFourfoldEngine();
         notify('That move is legal, but this lesson asks for a different move. '+lesson.task,'info');renderPreview();return false;
       }
     }
+    if(inMate()){const c=S.cases[mateIndex];if(m.from!==c.move.from||m.to!==c.move.to){pinnedTarget=m.to;hoverTarget=null;notify('That move is legal, but this exercise asks for '+mateMoveText(c)+'. Use Show move for a hint.','info');renderPreview();return false;}}
     const before=board,entry={from:m.from,to:m.to,board:before,turn,halfmove,piece:p,captured:board[m.to]};
     history.push(entry);halfmove=p.t==='p'||entry.captured?0:halfmove+1;
     board=E.apply(board,m);turn=E.other(turn);keys.push(E.key(board,turn));
     result=E.outcome(board,turn,halfmove,keys);clearSelection();
-    if(inLesson())completeLesson();else storeGame();
+    if(inMate())finishMateMove(actor);else if(inLesson())completeLesson();else storeGame();
     if(reducedMotion.matches||document.hidden){renderAll();scheduleComputer();}
     else animateMove(entry);
     return true;
@@ -613,7 +748,7 @@ else globalThis.Fourfold=createFourfoldEngine();
     aiVersion++;clearTimeout(aiTimer);aiTimer=null;aiWorker?.terminate();aiWorker=null;thinking=false;
   }
   function scheduleComputer() {
-    if(inLesson()||mode!=='ai'||turn!=='b'||interaction!=='play'||result||animation||thinking)return;
+    if(inMate()||inLesson()||mode!=='ai'||turn!=='b'||interaction!=='play'||result||animation||thinking)return;
     thinking=true;renderStatus();renderSelection();renderBoard();
     const version=++aiVersion;
     aiTimer=setTimeout(()=>{
@@ -639,7 +774,7 @@ else globalThis.Fourfold=createFourfoldEngine();
     },300);
   }
   function undo() {
-    if(!history.length||inLesson())return;
+    if(!history.length||inLesson()||inMate())return;
     cancelComputer();stopAnimation();
     let count=mode==='ai'&&turn==='w'&&history.length>=2?2:1;
     while(count--&&history.length){const h=history.pop();board=h.board;turn=h.turn;halfmove=h.halfmove;keys.pop();}
@@ -647,16 +782,19 @@ else globalThis.Fourfold=createFourfoldEngine();
     notify('Move undone.');
   }
   function newGame() {
+    if(inMate())return;
     cancelComputer();stopAnimation();
     board=E.initial();turn='w';history=[];halfmove=0;keys=[E.key(board,turn)];result=null;interaction='play';clearSelection();storeGame();renderAll();notify('A fresh game. White moves first.');
   }
   function setInteraction(value) {
+    if(inMate())return;
     if(!['play','inspect'].includes(value))return;
     cancelComputer();stopAnimation();interaction=value;captureRequest=null;
     storeGame();renderAll();
     if(value==='play')scheduleComputer();else notify('Play is paused. Inspect either side without moving anything.','info');
   }
   function giveHint() {
+    if(inMate()){showMateTarget();return;}
     if(inLesson()){showLessonTarget();return;}
     if(result||animation||thinking)return;
     if(mode==='ai'&&turn==='b'&&interaction==='play')return;
@@ -667,6 +805,7 @@ else globalThis.Fourfold=createFourfoldEngine();
     notify('The outlined square shows one legal move. This is an example, not a recommendation of the strongest move.');
   }
   function startLesson(index=0) {
+    if(inMate())exitMate(false);
     if(!Number.isInteger(index)||index<0||index>=LESSONS.length)return;
     cancelComputer();stopAnimation();
     if(!inLesson())gameSnapshot=snapshot();
@@ -717,10 +856,12 @@ else globalThis.Fourfold=createFourfoldEngine();
     captureRequest=null;selectPiece(E.index(lesson.from));hintTarget=E.index(lesson.to);pinnedTarget=hintTarget;hoverTarget=null;renderBoard();renderPreview();
   }
   function showHistory() {
+    if(inMate())return;
     $('history-list').innerHTML=history.length?history.map((h,i)=>`<div class="history-entry"><span>${i+1}.</span><div><strong>${pieceName(h.piece)}${h.captured?' × '+E.names[h.captured.t].toLowerCase():''}${h.piece.t==='p'&&E.coords[h.to][1]===(h.piece.c==='w'?3:0)?' → queen':''}</strong><small>${E.address(h.from)} → ${E.address(h.to)}</small></div></div>`).reverse().join(''):'<p>No moves yet. Your first move will appear here.</p>';
     $('history-dialog').showModal();
   }
   function inspectThreats(target) {
+    if(inMate())mateProbe=null;
     if(!Number.isInteger(target)||target<0||target>=64||animation)return;
     if(threat?.target===target){threat=null;renderAll();return;}
     const source=selected,piece=source===null?null:board[source];
@@ -734,7 +875,7 @@ else globalThis.Fourfold=createFourfoldEngine();
     hoverTarget=null;renderAll();
   }
   function renderThreats() {
-    $('threat-panel').hidden=!threat;if(!threat)return;
+    $('threat-panel').hidden=!threat||inMate()&&mateProbe!==null;if(!threat)return;
     const t=threat;
     $('threat-title').textContent=`${E.address(t.target)} · ${t.attackers.length} ${t.attackers.length===1?'attacker':'attackers'}`;
     $('threat-context').textContent=t.preview?`Hypothetical position after ${pieceName(t.piece)} ${E.address(t.from)} → ${E.address(t.target)}. ${t.legal?'No move has been made.':'This would leave its king in check and is not legal.'}`:'Current position. '+(t.kingSquare?'All enemy controlled squares count for king safety.':'Only immediate captures that keep the attacker’s own king safe are counted.');
@@ -778,6 +919,7 @@ else globalThis.Fourfold=createFourfoldEngine();
     let html='';
     if(threat)html=arrowDefinition('flat-attack','#ac503f')+threat.attackers.map(i=>arrowMarkup(center(i),center(threat.target),'flat-attack','#ac503f')).join('');
     else if(animation)html=arrowDefinition('flat-move','#62855c')+arrowMarkup(center(animation.from),center(animation.to),'flat-move','#62855c',1.6);
+    else if(inMate()&&mateStage==='after'&&mateShowNet&&(selected===mateAnalysis.king||selected===null)&&activeTarget()===null)html=arrowDefinition('flat-mate','#ac503f')+mateAnalysis.checkers.map(i=>arrowMarkup(center(i),center(mateAnalysis.king),'flat-mate','#ac503f',1.8)).join('');
     else if(selected!==null) {
       const target=activeTarget();
       if(target!==null&&target!==selected&&(selectedMoves.some(m=>m.to===target)||target===pinnedTarget)) {
@@ -846,6 +988,7 @@ else globalThis.Fourfold=createFourfoldEngine();
         for(const z of [0,1])parts.push(line(project([x,y,z,0]),project([x,y,z,1]),'#b18852',1.2,'4 4',.75));
       }
       if(threat)parts.push(arrowDefinition('space-attack','#ac503f')+threat.attackers.map(i=>arrowMarkup(projected[i],projected[threat.target],'space-attack','#ac503f',1.6)).join(''));
+      else if(inMate()&&mateStage==='after'&&mateShowNet&&!animation&&(selected===mateAnalysis.king||selected===null)&&target===null)parts.push(arrowDefinition('space-mate','#ac503f')+mateAnalysis.checkers.map(i=>arrowMarkup(projected[i],projected[mateAnalysis.king],'space-mate','#ac503f',1.6)).join(''));
       else if(selected!==null&&!animation) for(const m of selectedMoves) {
         const active=m.to===target;
         parts.push(line(projected[selected],projected[m.to],isPreview?'#376c9b':'#32654c',active?2.1:1,active?'':'3 5',active?.95:.33));
@@ -916,6 +1059,193 @@ else globalThis.Fourfold=createFourfoldEngine();
     $('spatial-panel').addEventListener('toggle',draw);
     return {draw,project,reset:()=>{rotation.reset();draw();}};
   }
+  // Studies borrow the boards, but never the saved game's history or storage.
+  function startMate(index=0) {
+    if(!Number.isInteger(index)||index<0||index>=S.cases.length)return;
+    cancelComputer();stopAnimation();
+    if(!inMate()) {
+      mateSnapshot={game:snapshot(),lessonIndex,lessonDone,gameSnapshot,selected,pinnedTarget,hintTarget,captureRequest,showControls};
+      lessonIndex=null;lessonDone=false;gameSnapshot=null;
+    }
+    mateIndex=index;mateSolved=false;mateShowNet=true;mode='local';showControls=false;
+    loadMateStage('after');
+    $('mate-heading').focus({preventScroll:true});
+    $('mate-banner').scrollIntoView({behavior:reducedMotion.matches?'instant':'smooth',block:'start'});
+  }
+  function loadMateStage(stage) {
+    if(!inMate()||!['before','after','try'].includes(stage))return;
+    cancelComputer();stopAnimation();
+    const c=S.cases[mateIndex];
+    mateStage=stage;mateProbe=null;mateSolved=false;
+    board=(stage==='after'?c.after:c.before).map(p=>p?{...p}:null);
+    turn=stage==='after'?c.defender:c.mover;history=[];halfmove=0;keys=[E.key(board,turn)];
+    result=E.outcome(board,turn,halfmove,keys);interaction=stage==='try'?'play':'inspect';
+    clearSelection();mateAnalysis=S.analyze(board,c.defender);
+    selected=stage==='after'?null:c.move.from;
+    selectedMoves=selected===null?[]:E.legal(board,board[selected].c,selected);
+    renderAll();announceSelection();
+  }
+  function exitMate(resume=true) {
+    if(!inMate())return;
+    cancelComputer();stopAnimation();
+    const saved=mateSnapshot;mateIndex=null;mateSnapshot=null;mateProbe=null;mateAnalysis=null;mateSolved=false;
+    if(saved) {
+      loadSnapshot(saved.game);lessonIndex=saved.lessonIndex;lessonDone=saved.lessonDone;gameSnapshot=saved.gameSnapshot;showControls=saved.showControls;
+      selected=saved.selected;selectedMoves=selected===null?[]:E.legal(board,board[selected].c,selected);
+      pinnedTarget=saved.pinnedTarget;hintTarget=saved.hintTarget;captureRequest=saved.captureRequest;
+    }
+    $('practice-button').textContent=inLesson()?'Practice active':'Learn by playing';
+    renderAll();storeGame();
+    if(resume){scheduleComputer();$('mates-button').focus({preventScroll:true});notify(inLesson()?'Back to your lesson, exactly where you left it.':'Back to your game, exactly where you left it.');}
+  }
+  function mateMoveText(c) {
+    return `${pieceName(c.before[c.move.from])} ${E.address(c.move.from)} → ${E.address(c.move.to)}${c.before[c.move.from].t==='p'&&c.after[c.move.to].t==='q'?' → queen':''}`;
+  }
+  function showMateTarget() {
+    if(!inMate()||mateStage==='after'||animation)return;
+    const c=S.cases[mateIndex];mateProbe=null;captureRequest=null;
+    selectPiece(c.move.from);pinnedTarget=c.move.to;hintTarget=c.move.to;hoverTarget=null;
+    renderBoard();renderPreview();notify('The outlined square is the destination. '+mateMoveText(c)+'.');
+  }
+  function replayMate() {
+    if(!inMate())return;
+    loadMateStage('try');
+    commitMove({...S.cases[mateIndex].move},'study-demo');
+  }
+  function finishMateMove(actor) {
+    const c=S.cases[mateIndex];mateStage='after';interaction='inspect';mateSolved=actor!=='study-demo';mateProbe=null;
+    mateAnalysis=S.analyze(board,c.defender);selected=null;selectedMoves=[];
+  }
+  function clearMateProbe() {
+    if(!inMate())return;
+    mateProbe=null;threat=null;clearSelection();
+    renderAll();
+  }
+  function showMateEscape(to) {
+    if(!inMate()||mateStage!=='after'||animation)return;
+    const a=mateAnalysis,row=a.neighbors.find(n=>n.to===to);if(!row)return;
+    clearSelection();mateProbe={kind:'escape',from:a.king,to,legal:row.legal,reason:row.reason,code:row.code};
+    const canTest=row.code!=='friendly'&&row.code!=='king-capture';
+    const position=canTest?E.apply(board,{from:a.king,to}):board;
+    threat={target:to,from:canTest?a.king:null,piece:board[a.king],preview:canTest,position,color:a.color,attackers:row.attackers,kingSquare:true,legal:row.legal};
+    renderAll();
+    $('mate-probe').scrollIntoView({behavior:reducedMotion.matches?'instant':'smooth',block:'start'});
+  }
+  function showMateDefense(index) {
+    if(!inMate()||mateStage!=='after'||animation)return;
+    const a=mateAnalysis,m=a.defenses[index];if(!m)return;
+    clearSelection();mateProbe={kind:'defense',...m};
+    const position=E.apply(board,m);
+    threat={target:a.king,from:m.from,piece:board[m.from],preview:true,position,color:a.color,attackers:m.attackers,kingSquare:true,legal:m.legal};
+    renderAll();
+    $('mate-probe').scrollIntoView({behavior:reducedMotion.matches?'instant':'smooth',block:'start'});
+  }
+  function showMateChecker(from) {
+    if(!inMate()||mateStage!=='after'||animation)return;
+    const a=mateAnalysis;if(!a.checkers.includes(from))return;
+    clearSelection();selected=from;selectedMoves=E.legal(board,board[from].c,from);
+    mateProbe={kind:'checker',from,to:a.king,legal:false};
+    threat={target:a.king,from:null,piece:null,preview:false,position:board,color:a.color,attackers:[from],kingSquare:true,legal:false};
+    renderAll();announceSelection();
+    $('mate-probe').scrollIntoView({behavior:reducedMotion.matches?'instant':'smooth',block:'start'});
+  }
+  function renderMateProbe() {
+    $('mate-probe').hidden=!inMate()||!mateProbe;
+    if(!inMate()||!mateProbe)return;
+    const p=mateProbe,a=mateAnalysis;
+    $('mate-probe').className='mate-probe'+(p.legal?' safe':'');
+    if(p.kind==='checker') {
+      const path=E.paths[p.from][a.king],axes=path.delta.flatMap((d,k)=>d?[`${'XYZW'[k]} ${Math.abs(d)}`]:[]).join(' + ');
+      $('mate-probe-title').textContent=`Checking line: ${E.names[board[p.from].t]} → ${E.colorName(a.color)} king`;
+      $('mate-probe-copy').textContent=`${E.address(p.from)} → ${E.address(a.king)} changes ${axes}. ${board[p.from].t==='n'?'The knight jumps. This attack has no blocking square.':path.between.length?`The line crosses ${path.between.map(E.address).join(', ')}. A defense would have to stop every check, not just this one.`:'There is no intervening square. This checking line cannot be blocked.'}`;
+      $('mate-probe-note').textContent='Current example. The arrow is an attack, not a move to capture the king. Kings are never captured.';
+      $('mate-probe-pieces').replaceChildren();return;
+    }
+    const isEscape=p.kind==='escape';
+    $('mate-probe-title').textContent=isEscape?`${p.legal?'✓ A legal escape':'× Not a legal escape'} · ${E.address(p.to)}`:`${p.legal?'✓ Legal defense':'× This defense fails'} · ${E.address(p.from)} → ${E.address(p.to)}`;
+    if(isEscape&&p.legal) {
+      const captured=board[p.to];
+      $('mate-probe-copy').textContent=`The king ${captured?'captures the '+E.names[captured.t].toLowerCase():'moves'} on ${E.address(p.to)}. In the resulting position, no enemy piece attacks it. This is why the original position is not checkmate.`;
+    } else $('mate-probe-copy').textContent=p.reason;
+    $('mate-probe-pieces').replaceChildren();
+    for(const i of threat?.attackers||[]){const span=document.createElement('span');span.textContent=pieceName(threat.position[i])+' · '+E.address(i);$('mate-probe-pieces').append(span);}
+    $('mate-probe-note').textContent=p.code==='friendly'||p.code==='king-capture'?'The board is unchanged: this destination cannot be occupied by the king.':'Hypothetical position only. The king or defending piece is shown after the attempted move; captures are removed before attacks are recalculated. Your game and the example are unchanged.';
+  }
+  function renderMate() {
+    const active=inMate();
+    document.body.classList.toggle('studying-mate',active);
+    $('mate-banner').hidden=!active;$('mate-proof').hidden=!active;$('mate-board-legend').hidden=!active;
+    $('mate-shortcut').hidden=active;$('mates-button').setAttribute('aria-pressed',String(active));
+    $('coach-panel').hidden=active&&selected===null;
+    $('practice-button').disabled=active;
+    $('hint-button').textContent=active?'Show move':'Hint';
+    if(!active){$('mate-probe').hidden=true;return;}
+    $('practice-nudge').hidden=true;
+    const c=S.cases[mateIndex],after=mateStage==='after'&&!animation,a=mateAnalysis;
+    $('mate-counter').textContent=`${mateIndex+1} / ${S.cases.length}`;
+    $('mate-prev').disabled=mateIndex===0;$('mate-next').disabled=mateIndex===S.cases.length-1;
+    $('mate-theme').textContent=c.theme;$('mate-case-title').textContent=c.title;$('mate-description').textContent=c.description;
+    $('exit-mates').textContent=mateSnapshot?.lessonIndex!==null&&mateSnapshot?.lessonIndex!==undefined?'Return to lesson ↗':'Return to game ↗';
+    for(const button of $('mate-cases').children)button.setAttribute('aria-pressed',String(Number(button.dataset.mate)===mateIndex));
+    $('mate-before').setAttribute('aria-pressed',String(mateStage==='before'));
+    $('mate-after').setAttribute('aria-pressed',String(mateStage==='after'));
+    $('mate-try').textContent=mateStage==='try'?'Restart your attempt ↻':'Try the move →';
+    $('mate-task').className='mate-task'+(mateSolved?' success':'');
+    $('mate-task').textContent=animation?'Watch: '+mateMoveText(c)+'.':mateStage==='try'?`Your turn: play ${mateMoveText(c)}. Click the piece, then its destination. “Show move” gives a hint.`:mateStage==='before'?`Before: ${E.colorName(c.mover)} to move. The demonstrated move is ${mateMoveText(c)}.`:`${mateSolved?'✓ You played it. ':''}${mateMoveText(c)}. ${a.status==='mate'?`${E.colorName(c.mover)} wins by checkmate.`:a.status==='stalemate'?'Stalemate: the game is drawn.':'Check, but the king can capture the queen.'}`;
+    const tag=$('mate-verdict-tag');tag.className='mate-verdict-tag'+(!after?' waiting':a.status!=='mate'?' safe':'');
+    tag.textContent=!after?(animation?'Moving':'Before'):a.status==='mate'?'Checkmate':a.status==='stalemate'?'Draw':'Not mate';
+    $('mate-proof-title').textContent=!after?(animation?'Watch the finishing move.':'What will this move change?'):a.status==='mate'?'Check. No legal reply.':a.status==='stalemate'?'No check. No legal move.':'In check, but not beaten.';
+    $('mate-proof-intro').textContent=!after?`${E.colorName(c.mover)} is moving. Preview either side, watch the move, or try it yourself.`:`${E.colorName(c.defender)} to move. ${a.status==='mate'?'The engine checks every piece’s replies—not just the king’s moves.':a.status==='stalemate'?'No moves without check means stalemate, not checkmate.':'One safe capture is enough to avoid checkmate. Tap the green destination to test it.'}`;
+    $('mate-check-count').textContent=after?a.checkers.length:'—';$('mate-reply-count').textContent=after?a.replies.length:'—';
+    $('mate-before-help').hidden=after;$('mate-proof-details').hidden=!after;
+    $('mate-before-copy').textContent=`${mateMoveText(c)}. ${c.kind==='stalemate'?'Notice whether the king is actually attacked afterward.':c.kind==='check'?'Look for a safe response, including capturing the checking piece.':'Afterward, check the king’s current square, all neighboring squares, and every other defending piece.'}`;
+    $('mate-show-target').disabled=!!animation;
+    if(after) {
+      $('mate-check-title').textContent=a.checkers.length?`Yes: ${a.checkers.length===1?'one checker':a.checkers.length+' checkers'}.`:'No: the king is not attacked.';
+      $('mate-check-copy').textContent=a.checkers.length?`${E.colorName(a.color)} king on ${E.address(a.king)} is attacked. Tap a checker to trace its line.`:'Its neighbors are dangerous, but its current square is safe. This fails the first requirement for checkmate.';
+      const signature=`${mateIndex}:${mateStage}`;
+      // Stable buttons preserve keyboard focus while a hypothetical escape is inspected.
+      if($('mate-checkers').dataset.signature!==signature) {
+        $('mate-checkers').dataset.signature=signature;$('mate-checkers').replaceChildren();
+        for(const i of a.checkers) {
+          const button=document.createElement('button');button.type='button';button.dataset.checker=i;
+          const axes=E.paths[i][a.king].delta.flatMap((d,k)=>d?[`${'XYZW'[k]}${Math.abs(d)>1?' '+Math.abs(d):''}`]:[]).join(' + ');
+          button.innerHTML=pieceSVG(board[i])+`<span>${pieceName(board[i])} · ${E.address(i)}<small>${axes} attack · trace line ↗</small></span>`;
+          button.addEventListener('click',()=>showMateChecker(i));$('mate-checkers').append(button);
+        }
+      }
+      $('mate-escape-title').textContent=a.kingMoves.length?`Yes: ${a.kingMoves.length} safe ${a.kingMoves.length===1?'reply':'replies'}.`:'No safe king move.';
+      $('mate-escape-copy').textContent=`${a.neighbors.length} neighboring squares across all four boards. ${a.kingMoves.length?`${a.kingMoves.length} safe; the rest are unavailable.`:'None is a legal destination.'} Tap a square to test it after moving the king.`;
+      $('mate-show-net').checked=mateShowNet;
+      if($('mate-escapes').dataset.signature!==signature) {
+        $('mate-escapes').dataset.signature=signature;$('mate-escapes').replaceChildren();
+        for(const row of a.neighbors) {
+          const button=document.createElement('button');button.type='button';button.dataset.escape=row.to;
+          const friendly=row.code==='friendly',mark=row.legal?'✓':friendly?'■':'×';
+          button.className='mate-escape'+(row.legal?' safe':friendly?' friendly':'');
+          button.innerHTML=`<span aria-hidden="true">${mark}</span><span>${E.address(row.to)}</span>`;
+          button.setAttribute('aria-label',`${row.legal?'Test safe escape':friendly?'Explain friendly-occupied square':'Test unavailable king move'} ${E.address(row.to)}`);
+          button.addEventListener('click',()=>showMateEscape(row.to));$('mate-escapes').append(button);
+        }
+      }
+      for(const b of $('mate-escapes').children)b.setAttribute('aria-pressed',String(mateProbe?.kind==='escape'&&Number(b.dataset.escape)===mateProbe.to));
+      $('mate-defense-title').textContent=a.otherMoves.length?'Another piece has a legal reply.':a.otherPieces.length?'No other legal defense.':'No other defending pieces.';
+      $('mate-defense-copy').textContent=!a.otherPieces.length?`${E.colorName(a.color)} has only its king in this example. There is no other piece to capture a checker or block a line.`:a.defenses.length?`${a.defenses.length} apparent ${a.defenses.length===1?'defense':'defenses'} to test. ${a.otherMoves.length?'A legal defense exists.':'Each still leaves the king in check. Capturing just one checker is not enough.'}`:'No other piece can capture a checker or block all checking lines while keeping the king safe.';
+      if($('mate-defenses').dataset.signature!==signature) {
+        $('mate-defenses').dataset.signature=signature;$('mate-defenses').replaceChildren();
+        a.defenses.forEach((m,index)=>{
+          const button=document.createElement('button');button.type='button';button.dataset.defense=index;
+          button.innerHTML=`${E.names[board[m.from].t]} ${E.address(m.from)} ${m.capture?'×':'→'} ${E.address(m.to)}<small>${m.capture?'Try capturing this checker':'Try blocking the line'} →</small>`;
+          button.addEventListener('click',()=>showMateDefense(index));$('mate-defenses').append(button);
+        });
+      }
+      $('mate-takeaway').textContent=c.lesson;
+    } else {
+      for(const id of ['mate-checkers','mate-escapes','mate-defenses'])delete $(id).dataset.signature;
+    }
+    renderMateProbe();
+  }
+
   // Wire the application only after its 64 stable board buttons exist.
   buildBoards();restoreGame();result=E.outcome(board,turn,halfmove,keys);
   LESSONS.forEach((lesson,i)=>{
@@ -923,11 +1253,25 @@ else globalThis.Fourfold=createFourfoldEngine();
     button.setAttribute('aria-label',`Lesson ${i+1}: ${lesson.title}`);button.title=`${i+1}. ${lesson.title}`;
     button.addEventListener('click',()=>startLesson(i));$('lesson-progress').append(button);
   });
+  S.cases.forEach((c,i)=>{const button=document.createElement('button');button.type='button';button.className='mate-case-button'+(c.kind!=='mate'?' comparison':'');button.dataset.mate=i;button.setAttribute('aria-pressed','false');button.innerHTML=`<span class="case-number" aria-hidden="true">${String(i+1).padStart(2,'0')}</span><span><strong>${c.label}</strong><small>${c.kind==='mate'?'Checkmate':'Compare'}</small></span>`;button.addEventListener('click',()=>startMate(i));$('mate-cases').append(button);});
   if(matchMedia('(max-width:800px)').matches)$('spatial-panel').open=false;
   spatial=createSpatialView();renderAll();scheduleComputer();
   for(const id of ['practice-button','start-first-lesson','nudge-practice'])$(id).addEventListener('click',()=>{
     if(inLesson())$('lesson-banner').scrollIntoView({behavior:'smooth',block:'start'});else startLesson(0);
   });
+  $('mates-button').addEventListener('click',()=>{if(inMate())$('mate-banner').scrollIntoView({behavior:reducedMotion.matches?'instant':'smooth',block:'start'});else startMate(0);});
+  $('nudge-mates').addEventListener('click',()=>startMate(0));
+  $('rules-mates').addEventListener('click',()=>{$('rules-dialog').close();startMate(0);});
+  $('exit-mates').addEventListener('click',()=>exitMate());
+  $('mate-jump-board').addEventListener('click',()=>$('game-area').scrollIntoView({behavior:reducedMotion.matches?'instant':'smooth',block:'start'}));
+  $('mate-jump-proof').addEventListener('click',()=>$('mate-proof').scrollIntoView({behavior:reducedMotion.matches?'instant':'smooth',block:'start'}));
+  $('mate-prev').addEventListener('click',()=>startMate(mateIndex-1));$('mate-next').addEventListener('click',()=>startMate(mateIndex+1));
+  $('mate-before').addEventListener('click',()=>loadMateStage('before'));$('mate-after').addEventListener('click',()=>loadMateStage('after'));
+  $('mate-try').addEventListener('click',()=>loadMateStage('try'));$('mate-replay').addEventListener('click',replayMate);
+  $('mate-show-target').addEventListener('click',showMateTarget);
+  $('mate-show-net').addEventListener('change',e=>{mateShowNet=e.target.checked;renderAll();});
+  $('mate-inspect-king').addEventListener('click',()=>{clearMateProbe();selectPiece(mateAnalysis.king);});
+  $('mate-clear-probe').addEventListener('click',clearMateProbe);
   $('rules-button').addEventListener('click',()=>$('rules-dialog').showModal());
   $('keyboard-button').addEventListener('click',()=>$('keyboard-dialog').showModal());
   document.querySelectorAll('[data-close]').forEach(button=>button.addEventListener('click',()=>$(button.dataset.close).close()));
@@ -955,6 +1299,7 @@ else globalThis.Fourfold=createFourfoldEngine();
   $('lesson-retry').addEventListener('click',()=>startLesson(lessonIndex));$('lesson-hint').addEventListener('click',showLessonTarget);
   document.addEventListener('keydown',event=>{
     if(event.key==='Escape'&&!document.querySelector('dialog[open]')) {
+      if(inMate()&&mateProbe){clearMateProbe();return;}
       if(threat){threat=null;renderAll();return;}
       clearSelection();renderAll();
     }
@@ -965,12 +1310,12 @@ else globalThis.Fourfold=createFourfoldEngine();
   reducedMotion.addEventListener('change',event=>{if(event.matches)finishAnimation();});
   window.addEventListener('pagehide',()=>{cancelComputer();stopAnimation();});
   // Read-only diagnostics are also useful for embedding and automated regression tests.
-  const getState=()=>JSON.parse(JSON.stringify({board,turn,mode,interaction,moves:history.map(({from,to})=>({from,to})),halfmove,keys,selected,selectedMoves,pinnedTarget,captureRequest,lessonIndex,lessonDone,result,thinking,animating:!!animation,threat:threat?{target:threat.target,attackers:threat.attackers,preview:threat.preview,legal:threat.legal}:null}));
-  const api={getState,lessons:LESSONS.map(({title,from,to,kind},i)=>({index:i,title,from:E.index(from),to:to?E.index(to):null,kind:kind||'move'}))};
+  const getState=()=>JSON.parse(JSON.stringify({board,turn,mode,interaction,moves:history.map(({from,to})=>({from,to})),halfmove,keys,selected,selectedMoves,pinnedTarget,captureRequest,lessonIndex,lessonDone,mateIndex,mateStage,mateSolved,mateProbe,mateAnalysis:mateAnalysis?{status:mateAnalysis.status,king:mateAnalysis.king,checkers:mateAnalysis.checkers,replies:mateAnalysis.replies,neighbors:mateAnalysis.neighbors,defenses:mateAnalysis.defenses}:null,result,thinking,animating:!!animation,threat:threat?{target:threat.target,attackers:threat.attackers,preview:threat.preview,legal:threat.legal}:null}));
+  const api={getState,studies:S.cases.map(c=>({index:c.index,id:c.id,title:c.title,kind:c.kind,move:c.move,mover:c.mover,defender:c.defender})),lessons:LESSONS.map(({title,from,to,kind},i)=>({index:i,title,from:E.index(from),to:to?E.index(to):null,kind:kind||'move'}))};
   // Custom fixtures are enabled only in explicitly requested test sessions.
   if(new URLSearchParams(location.search).has('test'))api.loadTestPosition=(b,c='w')=>{
     if(!Array.isArray(b)||b.length!==64||!['w','b'].includes(c)||['w','b'].some(color=>b.filter(p=>p?.c===color&&p.t==='k').length!==1))throw new Error('Fixture requires 64 squares and one king per color.');
-    cancelComputer();stopAnimation();lessonIndex=null;lessonDone=false;gameSnapshot=null;board=b;turn=c;mode='local';interaction='play';history=[];halfmove=0;keys=[E.key(board,turn)];result=E.outcome(board,turn,halfmove,keys);clearSelection();renderAll();
+    cancelComputer();stopAnimation();mateIndex=null;mateSnapshot=null;mateProbe=null;mateAnalysis=null;lessonIndex=null;lessonDone=false;gameSnapshot=null;board=b;turn=c;mode='local';interaction='play';history=[];halfmove=0;keys=[E.key(board,turn)];result=E.outcome(board,turn,halfmove,keys);clearSelection();renderAll();
   };
   globalThis.FourfoldApp=Object.freeze(api);
 })();
