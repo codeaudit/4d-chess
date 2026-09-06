@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f6f1"><meta name="description" content="4D chess by intuitionmachine.com. Learn the rules with guided lessons, previews for both sides, and interactive checkmate examples."><title>4D chess · intuitionmachine.com</title><style>:root{color-scheme:light;--paper:#f5f6f1;--card:#fffefb;--ink:#24382f;--muted:#5e6e61;--line:#dbe1d5;--green:#32654c;--green-light:#e9f1e8;--blue:#376c9b;--blue-light:#eaf1f8;--amber:#b67c30;--amber-light:#f4e8ca;--red:#ac503f;--red-light:#faeee9;--shadow:0 5px 22px #263b2710;--radius:16px}
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f6f1"><meta name="description" content="4D chess by intuitionmachine.com. Learn the rules with guided lessons, previews for both sides, interactive checkmate examples, and game recording with import, export, and replay."><title>4D chess · intuitionmachine.com</title><style>:root{color-scheme:light;--paper:#f5f6f1;--card:#fffefb;--ink:#24382f;--muted:#5e6e61;--line:#dbe1d5;--green:#32654c;--green-light:#e9f1e8;--blue:#376c9b;--blue-light:#eaf1f8;--amber:#b67c30;--amber-light:#f4e8ca;--red:#ac503f;--red-light:#faeee9;--shadow:0 5px 22px #263b2710;--radius:16px}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,select,input{font:inherit}button,select,summary,a{touch-action:manipulation}button,select{color:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:default}button,a,input,select,summary,[tabindex]{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--amber);outline-offset:3px}button{border:1px solid var(--line);border-radius:8px;background:var(--card);padding:9px 13px;min-height:40px;font-weight:550;transition:background .15s,border-color .15s}button:hover:not(:disabled){background:#edf1e8;border-color:#b6c6b0}button.primary{background:var(--green);border-color:var(--green);color:white}button.primary:hover:not(:disabled){background:#234f3a}button.ghost{border-color:transparent;background:transparent}button.small{font-size:12px;min-height:34px;padding:7px 10px}button.icon-button{width:40px;padding:6px;font-size:20px}select{min-height:40px;border:1px solid var(--line);border-radius:8px;background:var(--card);padding:8px 10px;max-width:100%}a{color:var(--green);text-underline-offset:3px}h1,h2,h3,h4,p{margin:0}svg{display:block}h2{font-size:18px;line-height:1.4}h3{font-size:16px}small{font-size:12px}[hidden]{display:none!important}.muted{color:var(--muted)}.eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:750;color:var(--muted)}.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip-link{position:absolute;left:12px;top:-80px;z-index:30;background:white;padding:10px}.skip-link:focus{top:12px}.app-shell{max-width:1280px;margin:auto;padding:0 30px 26px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:86px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:13px}.brand-mark{width:38px;height:38px;color:var(--green)}.brand h1{font:600 23px/1.1 Georgia,serif;letter-spacing:-.03em}.brand small{display:block;margin-top:4px;letter-spacing:.12em;font-size:9px;font-weight:650;text-transform:uppercase;color:var(--muted)}.top-actions{display:flex;gap:8px;align-items:center}.intro{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 0 22px}.intro h2{font:normal clamp(24px,2.4vw,32px)/1.2 Georgia,serif;letter-spacing:-.035em}.intro p{margin-top:7px;color:var(--muted);font-size:13px}.dimension-key{display:flex;gap:7px;flex-shrink:0}.dimension-key span{border:1px solid var(--line);background:var(--card);border-radius:7px;min-width:39px;text-align:center;padding:6px 10px;font:600 13px ui-monospace,monospace}.dimension-key span:last-child{color:var(--amber);border-color:#e2cc9c;background:#fbf5e7}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 348px;gap:28px;align-items:start}.game-area{min-width:0}.game-toolbar{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap}.turn-indicator{display:flex;gap:9px;align-items:center;min-width:0}.turn-token{width:13px;height:13px;border:1.5px solid #50664d;border-radius:50%;background:#fff6e1;flex-shrink:0}.turn-token.black{background:#284739}.turn-copy strong{font-size:14px;display:block;font-weight:650}.turn-copy small{display:block;color:var(--muted);font-size:11px}.game-controls{display:flex;gap:5px;align-items:center}.game-controls button{font-size:12px;padding:8px 10px;min-height:36px}.segmented{display:inline-flex;gap:2px;background:#e8ece3;border:1px solid #d7dfd1;border-radius:9px;padding:3px}.segmented button{min-height:29px;padding:5px 10px;border:0;border-radius:6px;font-size:12px;background:transparent}.segmented button[aria-pressed=true]{background:var(--card);box-shadow:0 1px 4px #1b35271a;color:var(--green)}.segmented button[data-interaction=inspect][aria-pressed=true]{color:var(--blue)}.board-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px 16px;box-shadow:var(--shadow)}.board-topline{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:14px;font-size:11px;color:var(--muted)}.board-topline strong{font-weight:600;color:var(--ink)}.board-topline .mono{font-family:ui-monospace,monospace}.matrix{position:relative;display:grid;grid-template-columns:20px minmax(0,1fr) minmax(0,1fr);gap:12px 16px}.axis-label{text-align:center;font-size:11px;font-weight:600;color:var(--muted)}.axis-label small{font-size:9px;color:#84917e;font-weight:400;margin-left:4px}.w-label{writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;align-self:center;justify-self:center;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.03em}.slice{min-width:0;position:relative}.slice-head{display:flex;justify-content:space-between;gap:5px;align-items:center;font-size:10px;min-height:22px;margin-bottom:5px;color:var(--muted)}.slice-head strong{font-weight:500}.slice-count{padding:1px 6px;border-radius:10px;background:var(--green-light);color:var(--green);font-weight:650;font-size:9px;white-space:nowrap}.slice-count.preview{background:var(--blue-light);color:var(--blue)}.board-wrap{position:relative;padding-left:11px}.ranks{position:absolute;left:0;top:0;bottom:0;display:grid;grid-template-rows:repeat(4,1fr);align-items:center;font-size:9px;color:var(--muted)}.board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));aspect-ratio:1;border:1px solid #aabca2;border-radius:5px;overflow:hidden}.cell{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:1;min-width:0;min-height:0;padding:0;border:none;border-radius:0;background:#e9edde;isolation:isolate;transition:background .12s;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}.cell.dark{background:#adbf9f}.cell:hover{background:#d6dfc7!important}.cell.dark:hover{background:#bbcfac!important}.cell.last{background:#dedeb5}.cell.last.dark{background:#bac498}.cell.selected,.cell.selected:hover{background:#efcf8e!important;box-shadow:inset 0 0 0 2px #bf8b38}.cell.selected.opponent{box-shadow:inset 0 0 0 2px var(--blue)}.cell.checked{background:#e7ad97!important}.cell.focus-target{box-shadow:inset 0 0 0 3px var(--green)}.cell.focus-target.opponent{box-shadow:inset 0 0 0 3px var(--blue)}.cell.invalid{box-shadow:inset 0 0 0 3px var(--red)}.cell.hint{outline:3px dashed var(--amber);outline-offset:-4px;z-index:1}.cell:focus-visible{outline-offset:-3px;z-index:2}.piece{width:78%;height:78%;max-width:67px;pointer-events:none;overflow:visible;filter:drop-shadow(0 1px 1px #22382020)}.white{color:#fffae9;--stroke:#4a604e;--detail:#4a604e}.black{color:#2b493b;--stroke:#193529;--detail:#d8e3ce}.marker{position:absolute;pointer-events:none;z-index:2}.marker.dot{width:19%;height:19%;border-radius:50%;background:var(--green);opacity:.85;box-shadow:0 0 0 3px #ffffff4d}.marker.diamond{width:17%;height:17%;border-radius:2px;border:2px solid var(--blue);background:#f4f8fd8f;transform:rotate(45deg)}.marker.ring{width:85%;height:85%;border:3px solid var(--red);border-radius:50%}.marker.ring.preview{border:3px dashed var(--blue)}.marker.control{right:6%;bottom:4%;width:17%;height:17%;font:700 17px/1 ui-monospace,monospace;color:#8d542e;display:grid;place-items:center}.threat-square{box-shadow:inset 0 0 0 3px var(--blue)!important}.attacker-square{background:#e9b8a6!important}.files{padding:3px 0 0 11px;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;color:var(--muted);font-size:9px}.route-overlay{position:absolute;inset:0;pointer-events:none;z-index:4;width:100%;height:100%;overflow:visible}.moving-token{position:absolute;pointer-events:none;z-index:5;display:grid;place-items:center}.moving-token .piece{width:100%;height:100%}.legend{display:flex;gap:12px;align-items:center;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:14px;padding-top:12px;font-size:10px;color:var(--muted)}.legend-item{display:inline-flex;align-items:center;gap:6px}.legend-dot{width:8px;height:8px;border-radius:50%;background:var(--green)}.legend-ring{width:12px;height:12px;border:2px solid var(--red);border-radius:50%}.legend-diamond{width:9px;height:9px;border:2px solid var(--blue);transform:rotate(45deg);border-radius:1px}.legend-selected{width:10px;height:10px;background:#efcf8e;border:1px solid var(--amber);border-radius:2px}.board-instruction{font-size:11px;color:var(--muted);padding:10px 3px 0;line-height:1.6}.board-instruction strong{color:var(--ink);font-weight:600}.sidebar{min-width:0}.panel{border:1px solid var(--line);background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}.panel+.panel,.sidebar>details{margin-top:16px}.coach-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-bottom:13px;border-bottom:1px solid var(--line);margin-bottom:15px}.coach-heading h2{font-size:13px;font-weight:650;display:flex;align-items:center;gap:7px}.coach-heading h2::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green)}.coach-heading button{min-height:28px;padding:3px 6px;font-size:11px}.empty-coach h3{font:normal 24px/1.25 Georgia,serif;letter-spacing:-.02em;margin:14px 0 10px}.empty-coach p{color:var(--muted);font-size:12px;line-height:1.8}.empty-coach .primary{margin-top:16px;width:100%;font-size:12px}.axis-explainer{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:19px 0 4px}.axis-explainer>div{padding:9px 10px;border:1px solid var(--line);border-radius:8px;display:flex;gap:9px;align-items:center}.axis-explainer b{font:600 16px ui-monospace,monospace;color:var(--green)}.axis-explainer>div:last-child b{color:var(--amber)}.axis-explainer span{font-size:10px;line-height:1.6;color:var(--muted)}.piece-heading{display:flex;gap:10px;align-items:center;margin-bottom:10px}.piece-avatar{width:49px;height:51px;background:#edf1e7;border-radius:10px;display:grid;place-items:center;flex-shrink:0}.piece-avatar .piece{width:45px;height:45px}.piece-heading h3{font-size:19px;line-height:1.25;font-weight:600}.piece-heading small{display:block;color:var(--muted);font:11px ui-monospace,monospace;margin-top:5px}.piece-tag{display:inline-flex;align-items:center;padding:4px 8px;background:var(--green-light);color:var(--green);border-radius:5px;font-size:10px;font-weight:650;margin-bottom:11px}.piece-tag.preview{background:var(--blue-light);color:var(--blue)}.rule-summary{font-size:12px;line-height:1.8;color:var(--muted)}.rule-formula{display:block;font:600 11px ui-monospace,monospace;color:var(--ink);margin-bottom:5px}.preview-notice{font-size:10px;color:var(--blue);line-height:1.65;margin-top:10px}.move-stats{display:flex;gap:18px;padding:12px 0;margin:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.move-stats>div{display:flex;gap:5px;align-items:baseline}.move-stats b{font:normal 22px/1.1 Georgia,serif}.move-stats span{font-size:10px;color:var(--muted)}.controls-toggle{display:flex;gap:7px;align-items:flex-start;font-size:11px;color:var(--muted);cursor:pointer;min-height:30px}.controls-toggle input{margin:3px 0 0;accent-color:var(--green)}.control-help{font-size:10px;color:#8d542e;line-height:1.6;margin:0 0 12px}.destination-heading{display:flex;justify-content:space-between;align-items:center;margin:8px 0}.destination-heading h4{font-size:11px;font-weight:650}.destination-heading small{font-size:9px;color:var(--muted)}.destinations{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;max-height:165px;overflow:auto;padding:2px 3px 3px 0;scrollbar-width:thin}.destination{font:10px/1.4 ui-monospace,monospace;text-align:left;min-height:35px;padding:6px 7px;white-space:nowrap;display:flex;gap:5px;align-items:center}.destination.capture{color:var(--red);background:#fcf6f2}.destination.preview{color:var(--blue)}.destination[aria-pressed=true]{background:var(--amber-light);border-color:#c8a86a}.destination .dest-mark{font-size:12px;color:var(--green)}.destination.preview .dest-mark{color:var(--blue)}.destination.capture .dest-mark{color:var(--red)}.no-moves{font-size:12px;line-height:1.75;padding:12px;background:var(--paper);border-radius:8px}.preview-card{padding:12px;margin-top:14px;border:1px solid var(--line);border-radius:10px;background:#f6f8f2}.preview-card.bad{border-color:#e5c3b7;background:var(--red-light)}.preview-card h4{font-size:12px;margin-bottom:6px}.preview-card>p{font-size:11px;line-height:1.8;color:var(--muted)}.coordinate-chips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;margin:10px 0}.coordinate-chip{font-size:10px;padding:6px 3px;border:1px solid var(--line);border-radius:6px;text-align:center;background:var(--card);line-height:1.6}.coordinate-chip b{display:block;font:500 9px ui-monospace,monospace;color:var(--muted)}.coordinate-chip span{font:600 10px ui-monospace,monospace;white-space:nowrap}.coordinate-chip.changed{background:var(--amber-light);border-color:#dec493}.coordinate-chip.changed b{color:#8b6127}.preview-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.preview-actions button{font-size:11px;min-height:34px;padding:7px 10px}.capture-request{border:1px solid #dab6a8;border-radius:9px;padding:12px;background:var(--red-light);margin-bottom:14px}.capture-request p{font-size:11px;line-height:1.7;color:#784b3b}.capture-request strong{font-size:12px;display:block;margin-bottom:3px}.capture-request .request-actions{display:flex;gap:6px;margin-top:10px}.capture-request button{font-size:11px;min-height:34px;padding:7px 9px}.capture-request button:first-child{background:var(--red);color:white;border-color:var(--red)}.coach-footnote{font-size:10px;color:var(--muted);margin-top:12px;line-height:1.7}.practice-nudge{padding:15px 16px;box-shadow:none;background:#edf2e8;display:flex;align-items:center;gap:13px}.practice-nudge p{font-size:11px;color:var(--muted);margin-top:3px}.practice-nudge h3{font-size:12px}.practice-nudge button{margin-left:auto;flex-shrink:0;font-size:11px;background:transparent;border-color:#bccbb2}.spatial-panel{padding:0;overflow:hidden}.spatial-panel>summary{padding:14px 18px;font-size:12px;font-weight:650;cursor:pointer;display:flex;align-items:center;justify-content:space-between;list-style:none}.spatial-panel>summary::after{content:'+';font-size:16px;color:var(--muted)}.spatial-panel[open]>summary::after{content:'−'}.spatial-panel>summary::-webkit-details-marker{display:none}.spatial-content{padding:0 14px 14px}.spatial-toolbar{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:10px}.spatial-toolbar button{min-height:26px;padding:3px 6px;font-size:10px}.space-svg{width:100%;aspect-ratio:440/350;touch-action:none;cursor:grab;user-select:none;overflow:visible}.space-svg:active{cursor:grabbing}.space-svg [data-square]{cursor:pointer}.space-caption{font-size:10px;line-height:1.7;color:var(--muted)}.spatial-key{display:flex;gap:12px;font-size:9px;color:var(--muted);margin-top:5px}.threat-panel{border:1px solid #b8cfdf;background:var(--blue-light);padding:14px 16px;border-radius:10px;margin-top:12px}.threat-panel>div{display:flex;justify-content:space-between;align-items:center;gap:10px}.threat-panel h3{font-size:13px;color:#315c7c}.threat-panel p{font-size:11px;color:#486376;line-height:1.8;margin-top:6px}.threat-panel button{font-size:11px;min-height:30px;padding:4px 8px}.lesson-banner{border:1px solid #c9d8bd;background:#edf3e7;border-radius:12px;padding:16px 18px;margin-bottom:18px}.lesson-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.lesson-top strong{font-size:10px;color:var(--green);letter-spacing:.09em;text-transform:uppercase}.lesson-top button{min-height:28px;padding:4px 7px;font-size:10px}.lesson-progress{display:flex;gap:5px;margin:9px 0 11px}.lesson-step{flex:1;min-height:6px;height:6px;padding:0;border:0;border-radius:10px;background:#d6dfce;position:relative}.lesson-step::after{content:'';position:absolute;inset:-7px 0}.lesson-step[aria-current=step]{background:var(--green)}.lesson-step.complete{background:#83a177}.lesson-banner h3{font:normal 23px/1.3 Georgia,serif;margin:3px 0 7px;letter-spacing:-.025em}.lesson-banner p{font-size:12px;line-height:1.8;color:#52664b}.lesson-task{margin-top:10px;border-top:1px solid #d4dfcb;padding-top:10px;display:flex;gap:9px;align-items:flex-start}.task-icon{display:grid;place-items:center;width:20px;height:20px;border:1px solid #a6be93;border-radius:50%;font-size:10px;flex-shrink:0;margin-top:1px}.lesson-banner.completed .task-icon{background:var(--green);color:white;border-color:var(--green)}.lesson-actions{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:12px}.lesson-actions div{display:flex;gap:6px}.lesson-actions button{font-size:11px;min-height:32px;padding:6px 10px}.lesson-note{font-size:10px!important;margin-top:10px}.bottom-bar{display:flex;justify-content:space-between;align-items:center;gap:14px;border-top:1px solid var(--line);padding:19px 0 0;margin-top:27px;font-size:10px;color:var(--muted)}.bottom-bar a{color:var(--muted)}.bottom-bar button{padding:3px 6px;min-height:26px;font-size:10px}.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:35;max-width:min(590px,calc(100% - 28px));background:#263f31;color:#fffef4;padding:12px 18px;border-radius:10px;box-shadow:0 5px 22px #0002;font-size:12px;line-height:1.7;pointer-events:none}.toast.error{background:#854632}.toast.info{background:#325977}dialog{margin:auto;max-height:88vh;width:min(740px,calc(100% - 28px));padding:0;border:1px solid var(--line);border-radius:18px;background:var(--card);color:var(--ink);box-shadow:0 20px 80px #0b261d33}dialog::backdrop{background:#1d302966;backdrop-filter:blur(3px)}.dialog-inner{padding:28px}.dialog-header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:18px}.dialog-header h2{font:normal 30px/1.2 Georgia,serif;letter-spacing:-.03em}.dialog-header .eyebrow{margin-bottom:6px}.dialog-inner p{color:var(--muted);font-size:13px;line-height:1.8}.dialog-inner h3{font-size:15px;margin:23px 0 9px}.rules-overview{padding:15px;background:var(--green-light);border-radius:9px;font-size:12px;line-height:1.8;color:#456047}.rules-overview code{font-family:ui-monospace,monospace;font-size:12px}.rules-table{width:100%;border-collapse:collapse;margin-top:16px;font-size:12px}.rules-table th,.rules-table td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}.rules-table th{font-weight:600;width:77px}.rules-table td{color:var(--muted);line-height:1.75}.rules-table .piece-rule{font-weight:650;color:var(--ink);display:block;margin-bottom:3px}.rules-table .rule-try{font-size:10px;min-height:28px;padding:5px 7px;white-space:nowrap}.dialog-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:23px}.history-list{max-height:50vh;overflow:auto}.history-entry{display:grid;grid-template-columns:30px 1fr;gap:7px;padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}.history-entry>span{color:var(--muted)}.history-entry small{display:block;font:11px ui-monospace,monospace;margin-top:5px;color:var(--muted)}.keyboard-grid{display:grid;grid-template-columns:130px 1fr;gap:8px 15px;font-size:12px;margin-top:15px;color:var(--muted)}kbd{font:11px ui-monospace,monospace;background:#edf0e8;padding:2px 5px;border:1px solid var(--line);border-radius:4px;color:var(--ink)}.storage-note{font-size:10px;color:var(--red);margin-top:10px}
 @media(min-width:1500px){.app-shell{max-width:1380px}.workspace{grid-template-columns:minmax(0,1fr) 375px;gap:36px}.board-card{padding:21px 27px}}
 @media(max-width:1050px){.app-shell{padding:0 22px 24px}.workspace{grid-template-columns:minmax(0,1fr) 310px;gap:20px}.board-card{padding:14px 12px}.matrix{gap:9px 11px;grid-template-columns:16px 1fr 1fr}.panel{padding:17px}.spatial-panel{padding:0}.game-toolbar{gap:9px}.game-controls{gap:4px}.game-controls button{padding:7px}.dimension-key{display:none}.destinations{grid-template-columns:repeat(2,1fr)}}
@@ -41,6 +41,19 @@
 @media(max-width:1050px){.repo-link{order:0}.top-actions{order:1}.topbar{column-gap:12px}.bottom-bar{justify-content:space-between}}
 @media(max-width:800px){.footer-about{text-align:center}.bottom-bar{flex-direction:column;justify-content:center;gap:12px}.footer-links{flex-direction:row;justify-content:center;flex-wrap:wrap;gap:8px 20px}}
 @media(max-width:480px){.repo-link{min-height:40px;padding:8px 10px}.brand-home{font-size:11px}.topbar{row-gap:14px}}
+
+/* Game records and replay studio */
+.record-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 22px;padding:12px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.record-state{display:flex;align-items:center;gap:11px;min-width:0}.record-state strong{font-size:13px;display:block}.record-state small{font-size:11px;display:block;color:var(--muted)}.record-light{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 0 4px var(--green-light);flex-shrink:0}.record-toolbar.is-replay .record-light{background:var(--blue);box-shadow:0 0 0 4px var(--blue-light)}.record-actions{display:flex;gap:7px;flex-shrink:0}.record-actions button{font-size:12px}
+.replay-banner{padding:20px 22px;margin-bottom:24px;border:1px solid #c2d5df;background:#eef4f7;border-radius:16px}.replay-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}.replay-heading h2{font:normal 25px/1.25 Georgia,serif;margin:5px 0}.replay-heading p:not(.eyebrow){font-size:12px;color:var(--muted)}.replay-heading>button{flex-shrink:0;font-size:12px}.replay-controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:18px}.replay-transport{display:flex;gap:5px}.replay-transport button{min-width:40px;padding:8px 10px}.replay-transport #replay-play{min-width:114px}.replay-speed{font-size:12px;display:flex;align-items:center;gap:7px}.replay-speed select{font-size:12px}.replay-controls>#continue-replay{margin-left:auto}.replay-progress{display:grid;grid-template-columns:180px minmax(0,1fr);align-items:center;gap:15px;margin-top:16px}.replay-progress label{font:12px ui-monospace,monospace;color:var(--blue)}.replay-progress input{width:100%;margin:0;min-height:28px;accent-color:var(--blue)}.replay-move-description{font-size:12px;margin-top:10px;color:var(--ink);min-height:19px}
+.score-panel{padding:18px;margin-bottom:16px}.score-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.score-heading h2{font-size:17px;margin-top:3px}.score-heading .eyebrow{font-size:9px}.score-result{font:600 12px ui-monospace,monospace;background:var(--green-light);color:var(--green);padding:5px 8px;border-radius:7px;white-space:nowrap}.score-note{font-size:11px;color:var(--muted);margin:9px 0}.score-scroll{max-height:220px;overflow:auto;border:1px solid var(--line);border-radius:8px;scrollbar-width:thin}.score-table{width:100%;border-collapse:collapse;table-layout:fixed}.score-table th{background:#f0f3ec;color:var(--muted);font-size:10px;text-align:left;padding:7px 4px;position:sticky;top:0;z-index:1}.score-table th:first-child{width:35px;text-align:center}.score-table td{padding:3px 2px;border-top:1px solid var(--line);font-size:10px;color:var(--muted);text-align:center}.score-table td:not(:first-child){text-align:left}.score-move{font:10px/1.5 ui-monospace,monospace;border:1px solid transparent;border-radius:5px;padding:6px 3px;min-height:36px;width:100%;text-align:left;overflow-wrap:anywhere;word-break:break-all;background:transparent}.score-move[aria-current=step]{background:var(--blue-light);border-color:#9ab9d1;color:#245579}.score-empty{padding:18px 12px;font-size:12px;color:var(--muted)}.notation-key{margin-top:10px;font-size:11px;color:var(--muted)}.notation-key summary{cursor:pointer;color:var(--green);padding:4px 0}.notation-key p{margin-top:7px;line-height:1.7}.notation-key code{font:11px ui-monospace,monospace;color:var(--ink)}
+.record-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:17px 0}.record-fields label,.field-label,.file-field{display:block;font-size:12px;font-weight:600}.record-fields .record-event{grid-column:1/-1}.record-fields input{display:block;width:100%;margin-top:5px;border:1px solid var(--line);border-radius:7px;background:white;color:var(--ink);padding:9px 11px;font-size:13px}.record-text{display:block;width:100%;max-width:100%;min-height:160px;resize:vertical;margin:7px 0 12px;border:1px solid var(--line);border-radius:9px;padding:13px;background:#f7f8f4;color:var(--ink);font:12px/1.7 ui-monospace,monospace;tab-size:2}.record-text:focus-visible{outline:3px solid var(--amber);outline-offset:2px}.dialog-inner .record-footnote{font-size:11px;line-height:1.65}.file-field{padding:13px;margin:16px 0;border:1px dashed #a8baa9;border-radius:9px;background:var(--green-light)}.file-field input{display:block;width:100%;margin-top:8px;font-size:12px}.file-field input::file-selector-button{border:1px solid var(--line);border-radius:6px;padding:7px 10px;margin-right:9px;cursor:pointer;background:var(--card);color:var(--ink)}.import-feedback.error{color:var(--red);background:var(--red-light);padding:10px;border-radius:7px;overflow-wrap:anywhere}.record-footnote+.import-feedback:empty{display:none}.record-dialog-open .record-toolbar{border-color:var(--blue)}
+@media(min-width:801px) and (max-width:1100px){.score-move{font-size:9px}}
+@media(max-width:800px){.record-toolbar{margin-bottom:18px}.score-panel{margin-bottom:0}.replay-heading{flex-wrap:wrap}.replay-controls>#continue-replay{margin-left:0}.replay-progress{grid-template-columns:1fr;gap:4px}.score-move{font-size:12px}.score-table th:first-child{width:45px}}
+@media(max-width:560px){.record-toolbar{flex-direction:column;align-items:stretch;gap:12px;padding:13px}.record-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.record-actions button{font-size:11px;padding:8px 4px}.replay-banner{padding:16px 13px}.replay-heading h2{font-size:22px}.replay-controls{gap:10px}.replay-transport{width:100%;gap:4px}.replay-transport button{min-width:0;flex:1;padding:8px 7px}.replay-transport #replay-play{min-width:105px;flex:2}.record-fields{grid-template-columns:1fr}.record-fields .record-event{grid-column:auto}#continue-dialog .dialog-actions,#record-dialog .dialog-actions,#import-dialog .dialog-actions{flex-wrap:wrap}.record-text{font-size:11px}.score-move{font-size:11px}}
+
+.replay-heading>div{min-width:0;overflow-wrap:anywhere}.replay-heading h2{overflow-wrap:anywhere}
+@media(min-width:1101px){.score-move{font-size:11px}}
 </style></head><body><a class="skip-link" href="#game-area">Skip to boards</a>
 <svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs>
 <symbol id="piece-p" viewBox="0 0 64 64"><g fill="currentColor" stroke="var(--stroke)" stroke-width="2.1" stroke-linejoin="round"><circle cx="32" cy="18" r="8"/><path d="M27 27h10l-2 8 7 13H22l7-13zM21 48h22l3 7H18z"/></g></symbol>
@@ -75,6 +88,16 @@
     <div class="mate-jumps"><button id="mate-jump-board" class="small">Go to boards ↓</button><button id="mate-jump-proof" class="small">Read the proof ↓</button></div>
     <p class="mate-save-note">Composed teaching positions for this variant. Your game and lesson progress stay untouched.</p>
   </section>
+  <section id="record-toolbar" class="record-toolbar" aria-label="Game recording">
+    <div class="record-state"><span class="record-light" aria-hidden="true"></span><div><strong id="record-state-title">Recording your game</strong><small id="record-state-detail">Every move is saved automatically.</small></div></div>
+    <div class="record-actions"><button id="open-record">Export game</button><button id="open-import">Import game</button><button id="replay-current" class="primary">Replay game</button></div>
+  </section>
+  <section id="replay-banner" class="replay-banner" aria-labelledby="replay-title" hidden>
+    <div class="replay-heading"><div><p class="eyebrow">Replay studio · read-only</p><h2 id="replay-title" tabindex="-1">Read the game, move by move.</h2><p id="replay-caption">Your live game is safe. Inspect either side at any position.</p></div><button id="exit-replay">Return to live game ↗</button></div>
+    <div class="replay-controls"><div class="replay-transport" role="group" aria-label="Replay transport"><button id="replay-first" aria-label="Go to starting position" title="Starting position">|←</button><button id="replay-prev" aria-label="Previous recorded move" title="Previous move">←</button><button id="replay-play" class="primary" aria-pressed="false">Play replay</button><button id="replay-next" aria-label="Next recorded move" title="Next move">→</button><button id="replay-last" aria-label="Go to final recorded position" title="Final position">→|</button></div><label class="replay-speed">Delay <select id="replay-speed" aria-label="Delay between replay moves"><option value="500">0.5 s</option><option value="1500" selected>1.5 s</option><option value="3000">3 s</option></select></label><button id="continue-replay" class="small">Continue from here…</button></div>
+    <div class="replay-progress"><label for="replay-scrubber" id="replay-position">Start · 0 of 0 plies</label><input id="replay-scrubber" type="range" min="0" max="0" value="0" step="1" aria-label="Replay position"></div>
+    <p id="replay-move-description" class="replay-move-description" role="status" aria-live="polite" aria-atomic="true"></p>
+  </section>
   <div class="workspace">
     <section class="game-area" id="game-area" aria-label="Chess boards">
       <div class="game-toolbar"><div class="turn-indicator"><span id="turn-token" class="turn-token" aria-hidden="true"></span><div class="turn-copy" role="status" aria-live="polite" aria-atomic="true"><strong id="status-title">White to move</strong><small id="status-detail">Choose any piece</small></div></div><div class="game-controls"><div class="segmented" role="group" aria-label="Board interaction"><button data-interaction="play" aria-pressed="true" title="Play moves and inspect either side">Play</button><button data-interaction="inspect" aria-pressed="false" title="Pause play. Inspect either side without moving anything.">Inspect only</button></div><button id="undo-button" title="Undo the last turn">↶ Undo</button><button id="hint-button" title="Show a legal cross-board move">Hint</button></div></div>
@@ -99,6 +122,12 @@
           <section class="mate-proof-step"><h3><span>3</span><b id="mate-defense-title">Can another piece help?</b></h3><p id="mate-defense-copy"></p><div id="mate-defenses" class="mate-defenses"></div></section>
           <p id="mate-takeaway" class="mate-takeaway"></p>
         </div>
+      </section>
+      <section id="score-panel" class="panel score-panel" aria-labelledby="score-title">
+        <div class="score-heading"><div><p class="eyebrow">A record in four dimensions</p><h2 id="score-title">Scoresheet</h2></div><span id="score-result" class="score-result">*</span></div>
+        <p id="score-note" class="score-note">Click a move to revisit that position.</p>
+        <div class="score-scroll" id="score-scroll"><table class="score-table"><caption class="sr-only">Recorded moves in extended long algebraic notation. Select a move to replay its position.</caption><thead><tr><th scope="col">Move</th><th scope="col">White</th><th scope="col">Black</th></tr></thead><tbody id="score-body"></tbody></table><p id="score-empty" class="score-empty">Make your first move. It will appear here automatically.</p></div>
+        <details class="notation-key"><summary>How to read 4D notation</summary><p><code>Ra1@00-a1@01</code> moves a rook along W.<br><code>@01</code> means Z = 0, W = 1.<br><code>x</code> capture · <code>+</code> check · <code>#</code> mate · <code>=Q</code> promotion.</p><p>R, N, B, Q, K identify pieces. Pawns have no letter. Both squares are always written, so identical pieces on different boards are never ambiguous.</p><p>PGN4D is this app’s format, not ordinary chess PGN.</p></details>
       </section>
       <section class="panel coach-panel" id="coach-panel" aria-labelledby="coach-title">
         <div class="coach-heading"><h2 id="coach-title">Your move coach</h2><button id="clear-selection" class="ghost" hidden>Clear ×</button></div>
@@ -137,9 +166,13 @@
 <tr><th scope="row">King</th><td><span class="piece-rule">1 step · any combination of axes</span>Change one or more coordinates by one. Never enter an attacked square, including attacks from another board.</td><td><button class="rule-try" data-try-lesson="4">Try →</button></td></tr>
 <tr><th scope="row">Pawn</th><td><span class="piece-rule">Forward on Y · capture on Y + one other axis</span>Move one empty rank toward 4 for White, or toward 1 for Black. Capture one rank forward plus one step on exactly one of X, Z, or W. Automatically become a queen on the final rank.</td><td><button class="rule-try" data-try-lesson="5">Try →</button></td></tr>
 </tbody></table><div class="mate-rule-intro"><p><strong>Checkmate means the king is in check and its side has no legal reply.</strong> A reply could move the king, capture a checker, or block a checking line. No legal moves without check is stalemate: a draw.</p><button id="rules-mates" class="primary">Explore checkmate examples →</button></div><h3>Blocking, check, and draws</h3><p>Only knights jump. You cannot land on a friendly piece or leave your king in check. Crossing lines in the projection do not block a move unless the full X, Y, Z, W square is actually on its path. Kings are never captured.</p><p style="margin-top:9px">There is no castling, en passant, or initial pawn double move. Each side starts with a king, queen, two rooks, one bishop, one knight, and four pawns. Draws are automatic on stalemate, the third occurrence of the same position with the same side to move, 100 half-moves without a pawn move or capture (50 moves per side), or two bare kings.</p><h3>Inspect without making a move</h3><p>Click any occupied square to inspect that piece, even your opponent’s. Green dots are playable destinations; blue diamonds are previews only. Rings mark captures. Clicking a capturable piece still inspects it and opens a separate capture confirmation. Use <strong>Inspect only</strong> to pause play and the computer. Opponent previews assume that side could move in the current position; they are not a prediction of its next turn.</p><div class="dialog-actions"><button class="primary" data-close="rules-dialog">Back to the board</button></div></div></dialog>
-<dialog id="new-dialog" aria-labelledby="new-title"><div class="dialog-inner"><div class="dialog-header"><h2 id="new-title">A fresh start?</h2><button class="icon-button ghost" data-close="new-dialog" aria-label="Cancel new game">×</button></div><p>This clears your current game and move history. Your lesson progress stays saved.</p><div class="dialog-actions"><button data-close="new-dialog">Keep playing</button><button class="primary" id="confirm-new">Start new game</button></div></div></dialog>
+<dialog id="new-dialog" aria-labelledby="new-title"><div class="dialog-inner"><div class="dialog-header"><h2 id="new-title">A fresh start?</h2><button class="icon-button ghost" data-close="new-dialog" aria-label="Cancel new game">×</button></div><p>This clears your current game and move history. Export your game first to keep a copy. Your lesson progress stays saved.</p><div class="dialog-actions"><button data-close="new-dialog">Keep playing</button><button class="primary" id="confirm-new">Start new game</button></div></div></dialog>
 <dialog id="history-dialog" aria-labelledby="history-title"><div class="dialog-inner"><div class="dialog-header"><h2 id="history-title">Move history</h2><button class="icon-button ghost" data-close="history-dialog" aria-label="Close move history">×</button></div><div class="history-list" id="history-list"></div><div class="dialog-actions"><button data-close="history-dialog">Close</button></div></div></dialog>
 <dialog id="keyboard-dialog" aria-labelledby="keyboard-title"><div class="dialog-inner"><div class="dialog-header"><h2 id="keyboard-title">Find your way around.</h2><button class="icon-button ghost" data-close="keyboard-dialog" aria-label="Close keyboard help">×</button></div><p>All pieces and destination controls work with a keyboard. Clicks on occupied squares always inspect; captures need confirmation.</p><div class="keyboard-grid"><span><kbd>Tab</kbd></span><span>Enter or leave a board or control.</span><span><kbd>Enter</kbd> / <kbd>Space</kbd></span><span>Select a piece or choose the focused destination.</span><span><kbd>Arrow keys</kbd></span><span>Move focus across X and Y within a board.</span><span><kbd>Alt</kbd> + <kbd>Arrows</kbd></span><span>Move between boards along Z and W.</span><span><kbd>Shift</kbd> + <kbd>F10</kbd></span><span>Show attackers on the focused square.</span><span><kbd>Escape</kbd></span><span>Close a dialog, or clear inspection and selection.</span></div><p style="margin-top:18px">In the 3D view: drag to orbit, arrow keys rotate, Shift + Left/Right rolls, and Home resets. On touch screens, long-press a square to see attackers.</p><div class="dialog-actions"><button class="primary" data-close="keyboard-dialog">Got it</button></div></div></dialog>
+
+<dialog id="record-dialog" aria-labelledby="record-title"><div class="dialog-inner"><div class="dialog-header"><div><p class="eyebrow">Portable game record · PGN4D v1</p><h2 id="record-title">Keep every move.</h2></div><button class="icon-button ghost" data-close="record-dialog" aria-label="Close game export">×</button></div><p id="record-summary"></p><div class="record-fields"><label class="record-event">Game title<input id="record-event" maxlength="200" autocomplete="off"></label><label>White player<input id="record-white" maxlength="200" autocomplete="off"></label><label>Black player<input id="record-black" maxlength="200" autocomplete="off"></label></div><label class="field-label" for="record-text">Game record · select to copy, or download below</label><textarea id="record-text" class="record-text" rows="11" readonly spellcheck="false" wrap="off"></textarea><p class="record-footnote">Includes the starting position, every recorded move, and the result. Undo removes undone moves from the live record. Browser storage is not a backup; download games you want to keep.</p><p id="record-feedback" role="status" aria-live="polite"></p><div class="dialog-actions"><button id="copy-record">Copy record</button><button id="download-record" class="primary">Download .pgn4d</button></div></div></dialog>
+<dialog id="import-dialog" aria-labelledby="import-title"><div class="dialog-inner"><div class="dialog-header"><div><p class="eyebrow">Import into a separate replay</p><h2 id="import-title">Bring a game back to life.</h2></div><button class="icon-button ghost" data-close="import-dialog" aria-label="Cancel game import">×</button></div><p>Open a PGN4D v1 file, or paste its text. Every move is checked against this variant’s rules before it is opened. Your live game will not be replaced.</p><label class="file-field" for="import-file">Choose a game file<input id="import-file" type="file" accept=".pgn4d,.pgn,.txt,text/plain"></label><label class="field-label" for="import-text">Or paste a PGN4D record</label><textarea id="import-text" class="record-text" rows="9" spellcheck="false" maxlength="262144" placeholder='[Event "My 4D game"]&#10;…'></textarea><p class="record-footnote">One main line per file · 256 KiB maximum · up to 4,096 plies. Ordinary 2D PGN, variations, resignation results, and clock results are not supported.</p><p id="import-feedback" class="import-feedback" role="status" aria-live="polite"></p><div class="dialog-actions"><button id="import-sample">Try a sample game</button><button id="confirm-import" class="primary">Import &amp; replay</button></div></div></dialog>
+<dialog id="continue-dialog" aria-labelledby="continue-title"><div class="dialog-inner"><div class="dialog-header"><h2 id="continue-title">Make this your live game?</h2><button class="icon-button ghost" data-close="continue-dialog" aria-label="Cancel continuing from replay">×</button></div><p id="continue-description"></p><p>This replaces your current live game with the moves up to this position. Later replay moves are not copied. Export any game you want to keep before continuing.</p><div class="dialog-actions"><button id="export-before-continue">Export live game first</button><button data-close="continue-dialog">Cancel</button><button id="confirm-continue" class="primary">Replace &amp; continue</button></div></div></dialog>
 <noscript><p style="padding:24px">JavaScript is required to play this game. All code is included locally in this file; no network connection is required.</p></noscript>
 <script>
 /* Fourfold: the 4 × 4 × 2 × 2 spatial chess variant used by 0xmiki's UI.
@@ -379,10 +412,189 @@ function createFourfoldStudies(E) {
 if(typeof module!=='undefined'&&module.exports)module.exports=createFourfoldStudies(require('./engine.js'));
 else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
 
+/* PGN4D v1: a local, versioned long-algebraic record for Fourfold.
+   Conventional PGN supplies the tag/movetext layout; @ZW extends square addresses.
+   This is not standard PGN and is not interchangeable with ordinary chess PGN.
+   Imported content is data only. Every move is replayed through the rules engine. */
+'use strict';
+function createFourfoldRecords(E) {
+  const LIMIT_BYTES=262144, LIMIT_PLIES=4096;
+  const VARIANT='Fourfold-4x4x2x2';
+  const cloneBoard=b=>b.map(p=>p?{c:p.c,t:p.t}:null);
+  const fail=message=>{throw new Error(message);};
+  const square=i=>{if(!Number.isInteger(i)||i<0||i>63)fail('Square is outside the 64-square board.');const [x,y,z,w]=E.coords[i];return `${'abcd'[x]}${y+1}@${z}${w}`;};
+  function parseSquare(value) {
+    const m=/^([a-d])([1-4])@([01])([01])$/.exec(value);
+    if(!m)fail(`Invalid 4D square: ${String(value).slice(0,40)}. Use a1@00, with Z before W.`);
+    return E.index(['abcd'.indexOf(m[1]),Number(m[2])-1,Number(m[3]),Number(m[4])]);
+  }
+  function standardStart(){return {board:E.initial(),turn:'w',halfmove:0,fullmove:1};}
+  function validateStart(s) {
+    if(!s||!Array.isArray(s.board)||s.board.length!==64||!['w','b'].includes(s.turn))fail('Starting position needs 64 squares and a side to move.');
+    if(!Number.isInteger(s.halfmove)||s.halfmove<0||s.halfmove>100||!Number.isInteger(s.fullmove)||s.fullmove<1||s.fullmove>1000000)fail('Invalid starting move counters.');
+    for(let i=0;i<64;i++) {
+      const p=s.board[i];if(p===null)continue;
+      if(!p||!['w','b'].includes(p.c)||!['p','r','n','b','q','k'].includes(p.t))fail('Invalid piece in the starting position.');
+      if(p.t==='p'&&E.coords[i][1]===(p.c==='w'?3:0))fail('A pawn on its promotion rank must already be a queen.');
+    }
+    for(const c of ['w','b'])if(s.board.filter(p=>p?.c===c&&p.t==='k').length!==1)fail('Starting position must contain exactly one king of each color.');
+    if(E.inCheck(s.board,E.other(s.turn)))fail('Illegal starting position: the side that just moved is still in check.');
+    return {board:cloneBoard(s.board),turn:s.turn,halfmove:s.halfmove,fullmove:s.fullmove};
+  }
+  function fen(s) {
+    const boards=[];
+    for(const w of [0,1])for(const z of [0,1]) {
+      const rows=[];
+      for(let y=3;y>=0;y--) {
+        let row='',empty=0;
+        for(let x=0;x<4;x++) {
+          const p=s.board[E.index([x,y,z,w])];
+          if(!p){empty++;continue;}
+          if(empty){row+=empty;empty=0;}row+=p.c==='w'?p.t.toUpperCase():p.t;
+        }
+        if(empty)row+=empty;rows.push(row);
+      }
+      boards.push(rows.join('/'));
+    }
+    return `${boards.join('|')} ${s.turn} ${s.halfmove} ${s.fullmove}`;
+  }
+  function parseFen(text) {
+    if(typeof text!=='string'||text.length>400)fail('Invalid FEN4D starting position.');
+    const fields=text.trim().split(/\s+/),b=Array(64).fill(null);
+    if(fields.length!==4||!['w','b'].includes(fields[1])||!/^\d+$/.test(fields[2])||!/^\d+$/.test(fields[3]))fail('FEN4D needs four boards, side to move, halfmove count, and fullmove number.');
+    const slices=fields[0].split('|');if(slices.length!==4)fail('FEN4D must contain four boards separated by |.');
+    slices.forEach((slice,k)=>{
+      const rows=slice.split('/');if(rows.length!==4)fail('Each FEN4D board needs four ranks.');
+      rows.forEach((row,r)=>{
+        let x=0;
+        for(const char of row) {
+          if(/[1-4]/.test(char)){x+=Number(char);if(x>4)fail('A FEN4D rank is too long.');continue;}
+          if(!/[prnbqkPRNBQK]/.test(char)||x>=4)fail('Invalid FEN4D rank or piece.');
+          b[E.index([x++,3-r,k%2,Math.floor(k/2)])]={c:char===char.toUpperCase()?'w':'b',t:char.toLowerCase()};
+        }
+        if(x!==4)fail('Each FEN4D rank must contain exactly four squares.');
+      });
+    });
+    return validateStart({board:b,turn:fields[1],halfmove:Number(fields[2]),fullmove:Number(fields[3])});
+  }
+  function notation(b,m,checkLegal=true) {
+    if(!m||!Number.isInteger(m.from)||!Number.isInteger(m.to)||m.from<0||m.from>63||m.to<0||m.to>63||!b[m.from])fail('Invalid move coordinates.');
+    const p=b[m.from];
+    if(checkLegal&&!E.legal(b,p.c,m.from).some(n=>n.to===m.to))fail(E.explain(b,m.from,m.to).reason);
+    const after=E.apply(b,m),opponent=E.other(p.c);
+    const promotion=p.t==='p'&&after[m.to].t==='q'?'=Q':'';
+    const suffix=E.inCheck(after,opponent)?(E.legal(after,opponent).length?'+':'#'):'';
+    return `${p.t==='p'?'':p.t.toUpperCase()}${square(m.from)}${b[m.to]?'x':'-'}${square(m.to)}${promotion}${suffix}`;
+  }
+  function parseMove(b,c,token) {
+    const m=/^([KQRBN]?)([a-d][1-4]@[01]{2})([-x])([a-d][1-4]@[01]{2})(=Q)?([+#])?$/.exec(token);
+    if(!m)fail(`Invalid LAN4D move “${String(token).slice(0,60)}”. Example: Ra1@00-a1@01.`);
+    const from=parseSquare(m[2]),to=parseSquare(m[4]),p=b[from];
+    if(!p)fail(`No piece at ${m[2]}.`);
+    if(p.c!==c)fail(`${E.colorName(c)} must move, but ${m[2]} contains a ${E.colorName(p.c)} piece.`);
+    if((p.t==='p'?'':p.t.toUpperCase())!==m[1])fail(`Wrong piece letter at ${m[2]}. Pawns have no letter.`);
+    const move={from,to},legal=E.explain(b,from,to);
+    if(!legal.legal)fail(legal.reason);
+    const expected=notation(b,move,false);
+    if(expected!==token)fail(`Notation does not match the position. Expected ${expected} (including capture, promotion, and check suffixes).`);
+    return move;
+  }
+  const resultCode=out=>!out?'*':out.type==='mate'?(out.winner==='w'?'1-0':'0-1'):'1/2-1/2';
+  function defaults() {
+    const d=new Date();
+    return {Event:'4D chess game',Site:'intuitionmachine.com',Date:[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('.'),Round:'-',White:'White',Black:'Black'};
+  }
+  function metadata(values={}) {
+    const out=defaults();
+    for(const key of Object.keys(out))if(Object.hasOwn(values,key)) {
+      if(typeof values[key]!=='string'||values[key].length>200||/[\u0000-\u001f\u007f]/.test(values[key]))fail(`Invalid ${key} tag (use at most 200 characters on one line).`);
+      out[key]=values[key];
+    }
+    return out;
+  }
+  function build(start,moves,meta={}) {
+    const first=validateStart(start);
+    if(!Array.isArray(moves)||moves.length>LIMIT_PLIES)fail(`A record may contain at most ${LIMIT_PLIES} plies.`);
+    let state={...first},keys=[E.key(first.board,first.turn)];
+    let outcome=E.outcome(state.board,state.turn,state.halfmove,keys);
+    const states=[{...state,outcome}],entries=[],normalized=[];
+    for(let i=0;i<moves.length;i++) {
+      const label=`Ply ${i+1} (${state.fullmove}${state.turn==='w'?'.':'...'}): `;
+      try {
+        if(outcome)fail('The game is already over; no further moves are allowed.');
+        const item=moves[i];
+        const m=typeof item==='string'?parseMove(state.board,state.turn,item):item;
+        if(!m||!Number.isInteger(m.from)||!Number.isInteger(m.to)||m.from<0||m.from>63||m.to<0||m.to>63||state.board[m.from]?.c!==state.turn)fail('Move coordinates or side to move are invalid.');
+        if(typeof item!=='string'&&!E.legal(state.board,state.turn,m.from).some(n=>n.to===m.to))fail(E.explain(state.board,m.from,m.to).reason);
+        const text=typeof item==='string'?item:notation(state.board,m,false);
+        const entry={from:m.from,to:m.to,board:state.board,turn:state.turn,halfmove:state.halfmove,fullmove:state.fullmove,piece:state.board[m.from],captured:state.board[m.to],notation:text};
+        entries.push(entry);normalized.push({from:m.from,to:m.to});
+        state={board:E.apply(state.board,m),turn:E.other(state.turn),halfmove:entry.piece.t==='p'||entry.captured?0:state.halfmove+1,fullmove:state.fullmove+(state.turn==='b'?1:0)};
+        keys.push(E.key(state.board,state.turn));outcome=E.outcome(state.board,state.turn,state.halfmove,keys);states.push({...state,outcome});
+      } catch(error){fail(label+error.message);}
+    }
+    return {start:first,moves:normalized,entries,states,meta:metadata(meta),result:resultCode(outcome),outcome};
+  }
+  function exportGame(record) {
+    const tags={...metadata(record.meta),Result:record.result,Variant:VARIANT,Format:'PGN4D',FormatVersion:'1',Notation:'LAN4D',SetUp:'1',FEN4D:fen(record.start)};
+    const escape=s=>s.replace(/\\/g,'\\\\').replace(/"/g,'\\"');
+    const headers=Object.entries(tags).map(([k,v])=>`[${k} "${escape(v)}"]`).join('\n');
+    const tokens=[];
+    record.entries.forEach((e,i)=>{if(e.turn==='w'||i===0)tokens.push(`${e.fullmove}${e.turn==='w'?'.':'...'}`);tokens.push(e.notation);});tokens.push(record.result);
+    let lines=[],line='';for(const token of tokens){if(line&&line.length+token.length+1>78){lines.push(line);line='';}line+=(line?' ':'')+token;}if(line)lines.push(line);
+    return headers+'\n\n'+lines.join('\n')+'\n';
+  }
+  function importGame(text) {
+    if(typeof text!=='string'||new TextEncoder().encode(text).length>LIMIT_BYTES)fail('Import a UTF-8 text file no larger than 256 KiB.');
+    let rest=text.replace(/^\uFEFF/,'').trim();if(!rest)fail('Choose a .pgn4d file or paste a game record first.');
+    const tags=Object.create(null);
+    while(rest.startsWith('[')) {
+      const m=/^\[([A-Za-z][A-Za-z0-9_]*)\s+"((?:[^"\\\r\n]|\\["\\])*)"\s*\]/.exec(rest);
+      if(!m)fail('Malformed PGN4D header. Use [Tag "value"] on one line.');
+      if(Object.hasOwn(tags,m[1]))fail(`Duplicate header: ${m[1]}.`);
+      if(Object.keys(tags).length>=40||m[2].length>800)fail('Too many or oversized headers.');
+      tags[m[1]]=m[2].replace(/\\(["\\])/g,'$1');rest=rest.slice(m[0].length).trimStart();
+    }
+    if(tags.Variant!==VARIANT||tags.Format!=='PGN4D'||tags.FormatVersion!=='1'||tags.Notation!=='LAN4D')fail('This app imports PGN4D v1 / LAN4D for Fourfold-4x4x2x2, not ordinary chess PGN.');
+    if(tags.SetUp!=='1'||!tags.FEN4D)fail('The record needs SetUp "1" and a FEN4D starting position.');
+    // Read brace/semicolon comments as text, never markup or code. Variations are unsupported.
+    let clean='',comment=false;
+    for(let i=0;i<rest.length;i++) {
+      const c=rest[i];
+      if(comment){if(c==='}')comment=false;else if(c==='{')fail('Nested comments are not supported.');continue;}
+      if(c==='{'){comment=true;clean+=' ';continue;}
+      if(c==='}')fail('Unmatched closing comment brace.');
+      if(c===';'){while(i<rest.length&&rest[i]!=='\n')i++;clean+=' ';continue;}
+      if(c==='('||c===')')fail('Variations are not supported. Import a single main line.');
+      clean+=c;
+    }
+    if(comment)fail('Unclosed comment.');
+    clean=clean.replace(/(\d+)(\.{1,3})/g,' $1$2 ');
+    const tokens=clean.trim().split(/\s+/).filter(Boolean),moves=[];
+    const start=parseFen(tags.FEN4D);let c=start.turn,n=start.fullmove,termination=null;
+    for(const token of tokens) {
+      if(termination!==null)fail('Unexpected text after the game result. Import one game at a time.');
+      if(/^\d+\.(?:\.\.)?$/.test(token)) {if(token!==`${n}${c==='w'?'.':'...'}`)fail(`Incorrect move number ${token}; expected ${n}${c==='w'?'.':'...'}`);continue;}
+      if(['*','1-0','0-1','1/2-1/2'].includes(token)){termination=token;continue;}
+      if(/^\$\d+$/.test(token))continue;
+      moves.push(token.replace(/[!?]+$/,''));if(moves.length>LIMIT_PLIES)fail(`A record may contain at most ${LIMIT_PLIES} plies.`);
+      if(c==='b')n++;c=E.other(c);
+    }
+    if(termination===null)fail('Missing game result marker. Use * for an unfinished game.');
+    if(tags.Result!==termination)fail('The Result header and final result marker disagree.');
+    const record=build(start,moves,tags);
+    if(record.result!==termination)fail(`Result does not match the position: expected ${record.result}. Resignations, clock results, and agreed draws are not supported by this version.`);
+    return record;
+  }
+  return {LIMIT_BYTES,LIMIT_PLIES,VARIANT,square,parseSquare,standardStart,validateStart,fen,parseFen,notation,parseMove,resultCode,defaults,metadata,build,exportGame,importGame};
+}
+if(typeof module!=='undefined'&&module.exports)module.exports=createFourfoldRecords(require('./engine.js'));
+else globalThis.FourfoldRecords=createFourfoldRecords(globalThis.Fourfold);
+
 /* Learning edition UI. All move entry points validate against the shared engine. */
 'use strict';
 (() => {
-  const E=globalThis.Fourfold, S=globalThis.FourfoldStudies, $=id=>document.getElementById(id);
+  const E=globalThis.Fourfold, S=globalThis.FourfoldStudies, R=globalThis.FourfoldRecords, $=id=>document.getElementById(id);
   const storageKey='fourfold-learning-v2', progressKey='fourfold-learning-progress-v2';
   const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
   const RULES={
@@ -442,6 +654,10 @@ else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
       board:()=>E.initial()}
   ];
   let board=E.initial(),turn='w',mode='ai',interaction='play',history=[],halfmove=0,keys=[E.key(board,turn)],result=null;
+  let gameStart=R.standardStart(),gameMeta=R.defaults(),replay=null,replayTimer=null;
+  let scoreSource=null,scoreLength=-1,recordDialogRecord=null,recordDialogSource='live';
+  let importVersion=0,importWorker=null,importTimer=null,importPending=false;
+  const inReplay=()=>replay!==null;
   let selected=null,selectedMoves=[],hoverTarget=null,pinnedTarget=null,hintTarget=null,captureRequest=null,showControls=false,threat=null;
   let lessonIndex=null,lessonDone=false,gameSnapshot=null,completed=new Set();
   let mateIndex=null,mateStage='after',mateSnapshot=null,mateAnalysis=null,mateProbe=null,mateSolved=false,mateShowNet=true;
@@ -454,6 +670,7 @@ else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
   const activeTarget=()=>hoverTarget??pinnedTarget??hintTarget;
   const inLesson=()=>lessonIndex!==null;
   function canPlayPiece(p) {
+    if(inReplay())return false;
     if(inMate()&&mateStage!=='try')return false;
     return !!p && p.c===turn && interaction==='play' && !result && !animation && !thinking &&
       (inLesson() ? !lessonDone : mode!=='ai'||p.c==='w');
@@ -517,6 +734,7 @@ else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
   // Occupied squares ALWAYS inspect. If this click also represents a legal
   // capture, preserve the original move separately for explicit confirmation.
   function onSquare(i) {
+    if(inReplay())pauseReplay();
     if(animation)return;
     if(inMate()&&mateProbe){clearMateProbe();notify('Back to the example. Click a piece to inspect it.');return;}
     if(inMate()&&mateStage==='after'&&!board[i]&&(selected===null||selected===mateAnalysis.king)&&mateAnalysis.neighbors.some(n=>n.to===i)){showMateEscape(i);return;}
@@ -592,13 +810,13 @@ else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
     updateFlatRoutes();
   }
   function renderStatus() {
-    $('mode').value=mode;$('mode').disabled=inLesson()||inMate();
+    $('mode').value=mode;$('mode').disabled=inLesson()||inMate()||inReplay();
     $('turn-token').className='turn-token'+(turn==='b'?' black':'');
-    $('undo-button').disabled=!history.length||inLesson()||inMate();
-    $('hint-button').disabled=!!result||!!animation||thinking||inLesson()&&lessonDone||inMate()&&mateStage==='after';
-    $('new-button').disabled=inLesson()||inMate();
+    $('undo-button').disabled=!history.length||inLesson()||inMate()||inReplay();
+    $('hint-button').disabled=inReplay()||!!result||!!animation||thinking||inLesson()&&lessonDone||inMate()&&mateStage==='after';
+    $('new-button').disabled=inLesson()||inMate()||inReplay();
     $('history-button').disabled=inLesson()||inMate();
-    document.querySelectorAll('[data-interaction]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.interaction===interaction)));
+    document.querySelectorAll('[data-interaction]').forEach(b=>{b.setAttribute('aria-pressed',String(b.dataset.interaction===interaction));b.disabled=inReplay();});
     let title,detail;
     if(inMate()) {const c=S.cases[mateIndex];title=mateStage==='after'?(mateAnalysis.status==='mate'?`${E.colorName(c.mover)} wins · example`:mateAnalysis.status==='stalemate'?'Stalemate · example':'Check, not mate · example'):`${E.colorName(c.mover)} to move · example`;detail=animation?'Finishing move in progress':mateStage==='try'?'Practice the indicated move · your game is untouched':mateStage==='before'?'Before the finishing move · preview only':`${E.colorName(c.defender)} to move · ${mateAnalysis.replies.length} legal replies`; }
     else if(inLesson()) {title=lessonDone?'Lesson complete':'Practice position';detail=lessonDone?'Explore the result, or continue':`${E.colorName(turn)} to move · your game is untouched`;}
@@ -607,8 +825,10 @@ else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
     else if(thinking) {title='Black is thinking…';detail='Switch to Inspect only to pause';}
     else {title=`${E.colorName(turn)} ${E.inCheck(board,turn)?'in check':'to move'}`;detail=E.inCheck(board,turn)?'Every legal move must protect the king':'Select any piece, on either side';}
     if(interaction==='inspect'&&!inMate())detail=`Play paused · ${E.colorName(turn)} keeps the turn`;
+    if(inReplay()){title=`${E.colorName(turn)} to move · replay`;detail=result?(result.type==='mate'?'Recorded position · checkmate':'Recorded position · draw'):`Read-only · after ${replay.ply} recorded plies`; }
     $('status-title').textContent=title;$('status-detail').textContent=detail;
     $('board-instruction').innerHTML=inMate()?(mateStage==='try'?'<strong>Your turn in a separate practice position.</strong> Play the indicated move. Use Show move for a hint.':'<strong>Inspect either side. Nothing will move.</strong> Tap an escape square in the proof panel to test it. The × marks show the king’s unavailable neighboring squares.'):interaction==='inspect'?'<strong>Inspection only. Nothing will move.</strong> Click either side’s pieces, then any destination. Switch back to Play to resume.':'<strong>Click a piece → see its moves.</strong> Click a dot to move. For captures, click the ring and confirm. <span class="desktop-tip">Right-click any square to see attackers.</span>';
+    if(inReplay())$('board-instruction').innerHTML='<strong>Replay is read-only.</strong> Click either side’s pieces to pause and inspect. Use the controls above, or select a move in the scoresheet.';
   }
   function renderCaptureRequest() {
     $('capture-request').hidden=!captureRequest;
@@ -689,11 +909,11 @@ else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
     spatial?.draw();updateFlatRoutes();
   }
   function renderAll() {
-    renderStatus();renderBoard();renderSelection();renderLesson();renderThreats();renderMate();spatial?.draw();
+    renderStatus();renderBoard();renderSelection();renderLesson();renderThreats();renderMate();renderRecords();spatial?.draw();
   }
   function storeGame() {
-    if(inLesson()||inMate())return;
-    try {localStorage.setItem(storageKey,JSON.stringify({version:2,mode,interaction,moves:history.map(({from,to})=>({from,to}))}));}
+    if(inLesson()||inMate()||inReplay())return;
+    try {localStorage.setItem(storageKey,JSON.stringify({version:3,mode,interaction,start:R.fen(gameStart),meta:gameMeta,moves:history.map(({from,to})=>({from,to}))}));}
     catch {$('storage-note').hidden=false;}
   }
   function restoreGame() {
@@ -703,23 +923,19 @@ else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
       const raw=localStorage.getItem(storageKey)||localStorage.getItem('fourfold-game-v1');
       if(!raw)return;
       const data=JSON.parse(raw),moves=data.moves??data.history;
-      if(!Array.isArray(moves)||moves.length>4096)throw new Error('Invalid saved history');
-      let b=E.initial(),c='w',hm=0,ks=[E.key(b,c)],hs=[];
-      for(const m of moves) {
-        if(!Number.isInteger(m.from)||!Number.isInteger(m.to)||!E.legal(b,c,m.from).some(n=>n.to===m.to))throw new Error('Invalid saved move');
-        hs.push({from:m.from,to:m.to,board:b,turn:c,halfmove:hm,piece:b[m.from],captured:b[m.to]});
-        hm=b[m.from].t==='p'||b[m.to]?0:hm+1;b=E.apply(b,m);c=E.other(c);ks.push(E.key(b,c));
-      }
-      board=b;turn=c;history=hs;halfmove=hm;keys=ks;mode=data.mode==='local'?'local':'ai';interaction=data.interaction==='inspect'?'inspect':'play';
+      const record=R.build(data.version===3?R.parseFen(data.start):R.standardStart(),moves,data.meta||(data.version===3?{}:{Date:'????.??.??'}));
+      const last=record.states.at(-1);
+      board=last.board;turn=last.turn;history=record.entries;halfmove=last.halfmove;keys=record.states.map(s=>E.key(s.board,s.turn));
+      gameStart=record.start;gameMeta=record.meta;mode=data.mode==='local'?'local':'ai';interaction=data.interaction==='inspect'?'inspect':'play';
     } catch(error) {
       if(error.name==='SecurityError')$('storage-note').hidden=false;
       else notify('The saved game could not be read. A fresh position has been opened.','info');
     }
   }
-  function snapshot() {return {board,turn,history:history.slice(),halfmove,keys:keys.slice(),mode,interaction};}
-  function loadSnapshot(s) {board=s.board;turn=s.turn;history=s.history;halfmove=s.halfmove;keys=s.keys;mode=s.mode;interaction=s.interaction;result=E.outcome(board,turn,halfmove,keys);clearSelection();}
+  function snapshot() {return {board,turn,history:history.slice(),halfmove,keys:keys.slice(),mode,interaction,gameStart,gameMeta:{...gameMeta}};}
+  function loadSnapshot(s) {board=s.board;turn=s.turn;history=s.history;halfmove=s.halfmove;keys=s.keys;mode=s.mode;interaction=s.interaction;gameStart=s.gameStart||R.standardStart();gameMeta=s.gameMeta||R.defaults();result=E.outcome(board,turn,halfmove,keys);clearSelection();}
   function commitMove(m,actor='human') {
-    if(!m||animation||result||interaction!=='play'||inLesson()&&lessonDone||inMate()&&mateStage!=='try')return false;
+    if(inReplay()||!m||animation||result||interaction!=='play'||inLesson()&&lessonDone||inMate()&&mateStage!=='try')return false;
     const p=board[m.from];
     if(!p||p.c!==turn)return false;
     if(actor==='human' && !canPlayPiece(p))return false;
@@ -734,6 +950,7 @@ else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
     }
     if(inMate()){const c=S.cases[mateIndex];if(m.from!==c.move.from||m.to!==c.move.to){pinnedTarget=m.to;hoverTarget=null;notify('That move is legal, but this exercise asks for '+mateMoveText(c)+'. Use Show move for a hint.','info');renderPreview();return false;}}
     const before=board,entry={from:m.from,to:m.to,board:before,turn,halfmove,piece:p,captured:board[m.to]};
+    entry.notation=R.notation(before,m,false);entry.fullmove=gameStart.fullmove+Math.floor((history.length+(gameStart.turn==='b'?1:0))/2);
     history.push(entry);halfmove=p.t==='p'||entry.captured?0:halfmove+1;
     board=E.apply(board,m);turn=E.other(turn);keys.push(E.key(board,turn));
     result=E.outcome(board,turn,halfmove,keys);clearSelection();
@@ -745,7 +962,7 @@ else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
   function stopAnimation() {
     cancelAnimationFrame(animationFrame);animationFrame=0;animation=null;$('motion-token').hidden=true;
   }
-  function finishAnimation() {if(!animation)return;stopAnimation();renderAll();scheduleComputer();}
+  function finishAnimation() {if(!animation)return;stopAnimation();renderAll();if(inReplay())scheduleReplay();else scheduleComputer();}
   function animateMove(entry) {
     const cross=E.coords[entry.from][2]!==E.coords[entry.to][2]||E.coords[entry.from][3]!==E.coords[entry.to][3];
     animation={from:entry.from,to:entry.to,piece:entry.piece,before:entry.board,progress:0,started:null,duration:cross?650:430};
@@ -773,7 +990,7 @@ else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
     aiVersion++;clearTimeout(aiTimer);aiTimer=null;aiWorker?.terminate();aiWorker=null;thinking=false;
   }
   function scheduleComputer() {
-    if(inMate()||inLesson()||mode!=='ai'||turn!=='b'||interaction!=='play'||result||animation||thinking)return;
+    if(inReplay()||document.querySelector('dialog[open]')||inMate()||inLesson()||mode!=='ai'||turn!=='b'||interaction!=='play'||result||animation||thinking)return;
     thinking=true;renderStatus();renderSelection();renderBoard();
     const version=++aiVersion;
     aiTimer=setTimeout(()=>{
@@ -799,7 +1016,7 @@ else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
     },300);
   }
   function undo() {
-    if(!history.length||inLesson()||inMate())return;
+    if(!history.length||inLesson()||inMate()||inReplay())return;
     cancelComputer();stopAnimation();
     let count=mode==='ai'&&turn==='w'&&history.length>=2?2:1;
     while(count--&&history.length){const h=history.pop();board=h.board;turn=h.turn;halfmove=h.halfmove;keys.pop();}
@@ -807,18 +1024,19 @@ else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
     notify('Move undone.');
   }
   function newGame() {
-    if(inMate())return;
+    if(inMate()||inLesson()||inReplay())return;
     cancelComputer();stopAnimation();
-    board=E.initial();turn='w';history=[];halfmove=0;keys=[E.key(board,turn)];result=null;interaction='play';clearSelection();storeGame();renderAll();notify('A fresh game. White moves first.');
+    gameStart=R.standardStart();gameMeta=R.defaults();board=E.initial();turn='w';history=[];halfmove=0;keys=[E.key(board,turn)];result=null;interaction='play';clearSelection();storeGame();renderAll();notify('A fresh game. White moves first.');
   }
   function setInteraction(value) {
-    if(inMate())return;
+    if(inMate()||inReplay())return;
     if(!['play','inspect'].includes(value))return;
     cancelComputer();stopAnimation();interaction=value;captureRequest=null;
     storeGame();renderAll();
     if(value==='play')scheduleComputer();else notify('Play is paused. Inspect either side without moving anything.','info');
   }
   function giveHint() {
+    if(inReplay())return;
     if(inMate()){showMateTarget();return;}
     if(inLesson()){showLessonTarget();return;}
     if(result||animation||thinking)return;
@@ -830,6 +1048,7 @@ else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
     notify('The outlined square shows one legal move. This is an example, not a recommendation of the strongest move.');
   }
   function startLesson(index=0) {
+    if(inReplay())exitReplay(false);
     if(inMate())exitMate(false);
     if(!Number.isInteger(index)||index<0||index>=LESSONS.length)return;
     cancelComputer();stopAnimation();
@@ -882,10 +1101,11 @@ else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
   }
   function showHistory() {
     if(inMate())return;
-    $('history-list').innerHTML=history.length?history.map((h,i)=>`<div class="history-entry"><span>${i+1}.</span><div><strong>${pieceName(h.piece)}${h.captured?' × '+E.names[h.captured.t].toLowerCase():''}${h.piece.t==='p'&&E.coords[h.to][1]===(h.piece.c==='w'?3:0)?' → queen':''}</strong><small>${E.address(h.from)} → ${E.address(h.to)}</small></div></div>`).reverse().join(''):'<p>No moves yet. Your first move will appear here.</p>';
+    $('history-list').innerHTML=history.length?history.map((h,i)=>`<div class="history-entry"><span>${i+1}.</span><div><strong>${h.notation||R.notation(h.board,h)}</strong><br><strong>${pieceName(h.piece)}${h.captured?' × '+E.names[h.captured.t].toLowerCase():''}${h.piece.t==='p'&&E.coords[h.to][1]===(h.piece.c==='w'?3:0)?' → queen':''}</strong><small>${E.address(h.from)} → ${E.address(h.to)}</small></div></div>`).reverse().join(''):'<p>No moves yet. Your first move will appear here.</p>';
     $('history-dialog').showModal();
   }
   function inspectThreats(target) {
+    if(inReplay())pauseReplay();
     if(inMate())mateProbe=null;
     if(!Number.isInteger(target)||target<0||target>=64||animation)return;
     if(threat?.target===target){threat=null;renderAll();return;}
@@ -1086,6 +1306,7 @@ else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
   }
   // Studies borrow the boards, but never the saved game's history or storage.
   function startMate(index=0) {
+    if(inReplay())exitReplay(false);
     if(!Number.isInteger(index)||index<0||index>=S.cases.length)return;
     cancelComputer();stopAnimation();
     if(!inMate()) {
@@ -1271,6 +1492,208 @@ else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
     renderMateProbe();
   }
 
+  // Recording is automatic. Replay borrows the boards, never the live record/storage.
+  function liveRecord() {return R.build(gameStart,history.map(({from,to})=>({from,to})),gameMeta);}
+  function activeRecord() {return inReplay()?replay.record:liveRecord();}
+  function savedLiveRecord() {
+    if(!inReplay())return liveRecord();
+    const s=replay.saved.game;return R.build(s.gameStart,s.history.map(({from,to})=>({from,to})),s.gameMeta);
+  }
+  function describeRecordedMove(e) {
+    if(!e)return 'Starting position. No recorded move has been played yet.';
+    const axes=E.paths[e.from][e.to].delta.map((n,i)=>n?'XYZW'[i]:null).filter(Boolean).join(' + ');
+    return `${e.fullmove}${e.turn==='w'?'.':'...'} ${e.notation} · ${pieceName(e.piece)}: ${E.address(e.from)} → ${E.address(e.to)} · ${axes}${e.captured?' · captures '+E.names[e.captured.t].toLowerCase():''}${e.notation.includes('=Q')?' · promotes to queen':''}${e.notation.endsWith('#')?' · checkmate':e.notation.endsWith('+')?' · check':''}`;
+  }
+  function renderRecords() {
+    const hidden=inLesson()||inMate();
+    $('record-toolbar').hidden=hidden;$('score-panel').hidden=hidden;$('replay-banner').hidden=!inReplay();
+    if(hidden)return;
+    const entries=inReplay()?replay.record.entries:history;
+    $('record-toolbar').classList.toggle('is-replay',inReplay());
+    $('record-state-title').textContent=inReplay()?'Viewing a recorded game':result?'Game recorded':interaction==='inspect'?'Recording · play paused':'Recording your game';
+    $('record-state-detail').textContent=inReplay()?`${entries.length} plies · live game preserved`:`${entries.length} ${entries.length===1?'ply':'plies'} recorded · includes both players’ moves`;
+    $('open-record').textContent=inReplay()?'Export replay':'Export game';
+    $('replay-current').textContent=inReplay()?'Restart replay':'Replay game';
+    $('replay-current').disabled=!entries.length;
+    $('score-result').textContent=inReplay()?replay.record.result:R.resultCode(result);
+    $('score-result').title='* = unfinished; 1–0 = White wins; 0–1 = Black wins; 1/2–1/2 = draw';
+    $('score-note').textContent=inReplay()?'Select any move to jump to its position.':'Click a move to revisit that position.';
+    $('score-empty').hidden=entries.length>0;
+    $('score-empty').textContent=inReplay()?'This record contains only a starting position.':'Make your first move. It will appear here automatically.';
+    if(scoreSource!==entries||scoreLength!==entries.length) {
+      scoreSource=entries;scoreLength=entries.length;
+      const body=$('score-body');body.replaceChildren();let row=null,lastNumber=null;
+      entries.forEach((e,i)=>{
+        if(!e.notation)e.notation=R.notation(e.board,e);
+        if(!e.fullmove)e.fullmove=gameStart.fullmove+Math.floor((i+(gameStart.turn==='b'?1:0))/2);
+        if(e.fullmove!==lastNumber) {
+          row=document.createElement('tr');lastNumber=e.fullmove;
+          for(const text of [String(e.fullmove)+'.','—','—']){const td=document.createElement('td');td.textContent=text;row.append(td);}body.append(row);
+        }
+        const button=document.createElement('button');button.className='score-move';button.type='button';button.dataset.ply=String(i+1);button.textContent=e.notation;button.title=describeRecordedMove(e);button.setAttribute('aria-label',`Replay position after ${e.fullmove}${e.turn==='w'?'. White':'... Black'} ${e.notation}`);
+        button.addEventListener('click',()=>{if(inReplay())seekReplay(i+1);else startReplay(liveRecord(),i+1,'current');});
+        const cell=row.children[e.turn==='w'?1:2];cell.replaceChildren(button);
+      });
+    }
+    const ply=inReplay()?replay.ply:entries.length;
+    $('score-body').querySelectorAll('[data-ply]').forEach(b=>b.setAttribute('aria-current',Number(b.dataset.ply)===ply?'step':'false'));
+    if(inReplay()) {
+      $('replay-title').textContent=replay.record.meta.Event||'Recorded game';
+      $('replay-caption').textContent=`${replay.record.meta.White||'White'} vs ${replay.record.meta.Black||'Black'} · Your live game is safe. Inspect either side; click a piece to pause autoplay.`;
+      $('replay-position').textContent=`${ply===0?'Start':ply===entries.length?'End':'Position'} · ${ply} of ${entries.length} plies`;
+      $('replay-scrubber').max=String(entries.length);$('replay-scrubber').value=String(ply);$('replay-scrubber').disabled=!entries.length;
+      $('replay-scrubber').setAttribute('aria-valuetext',`After ${ply} of ${entries.length} recorded moves`);
+      $('replay-play').textContent=replay.playing?'Pause replay':ply===entries.length&&entries.length?'Play again':'Play replay';
+      $('replay-play').setAttribute('aria-pressed',String(replay.playing));$('replay-play').disabled=!entries.length;
+      $('replay-first').disabled=$('replay-prev').disabled=ply===0;
+      $('replay-next').disabled=$('replay-last').disabled=ply===entries.length;
+      $('continue-replay').disabled=!!result||!!animation;
+      $('replay-move-description').textContent=describeRecordedMove(entries[ply-1]);
+    }
+  }
+  function pauseReplay() {
+    clearTimeout(replayTimer);replayTimer=null;
+    if(!inReplay())return;
+    replay.playing=false;
+    if(animation){stopAnimation();renderAll();}else renderRecords();
+  }
+  function scheduleReplay() {
+    clearTimeout(replayTimer);replayTimer=null;
+    if(!inReplay()||!replay.playing||animation||document.hidden||document.querySelector('dialog[open]'))return;
+    if(replay.ply>=replay.record.entries.length){replay.playing=false;renderRecords();return;}
+    replayTimer=setTimeout(()=>{if(inReplay()&&replay.playing)seekReplay(replay.ply+1,true,true);},Number($('replay-speed').value));
+  }
+  function seekReplay(ply,animate=false,keepPlaying=false) {
+    if(!inReplay())return;
+    clearTimeout(replayTimer);replayTimer=null;stopAnimation();
+    const previous=replay.ply;
+    replay.ply=Math.max(0,Math.min(replay.record.entries.length,Number.isFinite(ply)?Math.round(ply):0));
+    if(!keepPlaying)replay.playing=false;
+    const r=replay.record,s=r.states[replay.ply];
+    board=s.board;turn=s.turn;halfmove=s.halfmove;history=r.entries.slice(0,replay.ply);
+    keys=r.states.slice(0,replay.ply+1).map(state=>E.key(state.board,state.turn));result=s.outcome;interaction='inspect';clearSelection();
+    if(animate&&replay.ply===previous+1&&!reducedMotion.matches&&!document.hidden)animateMove(r.entries[replay.ply-1]);
+    else {renderAll();scheduleReplay();}
+    const current=$('score-body').querySelector('[aria-current="step"]');
+    if(current){const parent=$('score-scroll'),a=current.getBoundingClientRect(),b=parent.getBoundingClientRect();if(a.top<b.top+28||a.bottom>b.bottom)parent.scrollTop+=a.top-b.top-parent.clientHeight/2;}
+  }
+  function startReplay(record,ply=0,source='import') {
+    if(inLesson()||inMate())return;
+    cancelComputer();stopAnimation();pauseReplay();
+    const saved=inReplay()?replay.saved:{game:snapshot(),selected,pinnedTarget,hintTarget,captureRequest,showControls};
+    replay={record,ply:0,playing:false,saved,source};gameStart=record.start;gameMeta={...record.meta};
+    $('record-dialog').close();$('import-dialog').close();
+    seekReplay(ply);
+    $('replay-title').focus({preventScroll:true});$('record-toolbar').scrollIntoView({behavior:reducedMotion.matches?'instant':'smooth',block:'start'});
+  }
+  function exitReplay(resume=true) {
+    if(!inReplay())return;
+    pauseReplay();cancelComputer();stopAnimation();const saved=replay.saved;replay=null;loadSnapshot(saved.game);
+    showControls=saved.showControls;selected=saved.selected;
+    if(selected!==null&&!board[selected])selected=null;
+    selectedMoves=selected===null?[]:E.legal(board,board[selected].c,selected);pinnedTarget=saved.pinnedTarget;hintTarget=saved.hintTarget;captureRequest=saved.captureRequest;
+    renderAll();if(resume){scheduleComputer();$('replay-current').focus({preventScroll:true});notify('Your live game is unchanged. Back where you left it.');}
+  }
+  function toggleReplay() {
+    if(!inReplay()||!replay.record.moves.length)return;
+    if(replay.playing){pauseReplay();return;}
+    if(replay.ply===replay.record.moves.length)seekReplay(0);
+    replay.playing=true;renderRecords();seekReplay(replay.ply+1,true,true);
+  }
+  function continueReplay() {
+    if(!inReplay()||result)return;
+    pauseReplay();$('continue-description').textContent=`Continue after ${replay.ply} ${replay.ply===1?'ply':'plies'}, with ${E.colorName(turn)} to move. Play resumes in local two-player mode, paused for inspection.`;
+    $('continue-dialog').showModal();
+  }
+  function confirmContinueReplay() {
+    if(!inReplay()||result)return;
+    pauseReplay();cancelComputer();stopAnimation();
+    const record=replay.record,ply=replay.ply;
+    // Copy the retained prefix: future live moves must not mutate the replay record.
+    gameStart={...record.start,board:record.start.board.map(p=>p?{...p}:null)};gameMeta={...record.meta};
+    history=record.entries.slice(0,ply).map(e=>({...e}));replay=null;mode='local';interaction='inspect';
+    clearSelection();$('continue-dialog').close();storeGame();renderAll();notify('This position is now your live game. Choose Play to continue; new moves will be recorded.');
+  }
+  function openRecord(record=null,source=null) {
+    if(inLesson()||inMate())return;
+    cancelComputer();stopAnimation();pauseReplay();
+    try{recordDialogRecord=record||activeRecord();}catch(error){notify('Unable to export: '+error.message,'error');return;}
+    recordDialogSource=source||(inReplay()?'replay':'live');
+    const meta=recordDialogRecord.meta;
+    $('record-event').value=meta.Event;$('record-white').value=meta.White;$('record-black').value=meta.Black;
+    $('record-summary').textContent=`${recordDialogRecord.entries.length} plies (individual moves). ${recordDialogSource==='saved-live'?'Exporting the live game preserved behind this replay. Label edits affect this exported copy only.':'Export includes the entire record, not just the position currently displayed.'}`;
+    $('record-feedback').textContent='';updateRecordExport(false);renderAll();$('record-dialog').showModal();
+  }
+  function updateRecordExport(persist=true) {
+    if(!recordDialogRecord)return;
+    try {
+      const meta=R.metadata({...recordDialogRecord.meta,Event:$('record-event').value,White:$('record-white').value,Black:$('record-black').value});
+      recordDialogRecord.meta=meta;
+      if(persist){
+        if(recordDialogSource==='live'){gameMeta={...meta};storeGame();}
+        else if(recordDialogSource==='replay'&&inReplay()){replay.record.meta={...meta};gameMeta={...meta};renderRecords();}
+        // A preserved-live export is a separate copy: its labels do not alter the live game.
+      }
+      $('record-text').value=R.exportGame(recordDialogRecord);$('download-record').disabled=false;$('copy-record').disabled=false;
+    } catch(error){$('record-feedback').textContent=error.message;$('download-record').disabled=true;$('copy-record').disabled=true;}
+  }
+  function downloadRecord() {
+    if(!recordDialogRecord)return;
+    updateRecordExport();if($('download-record').disabled)return;
+    const blob=new Blob([$('record-text').value],{type:'text/plain;charset=utf-8'});
+    const url=URL.createObjectURL(blob),a=document.createElement('a');
+    const title=recordDialogRecord.meta.Event.replace(/[^a-zA-Z0-9_-]+/g,'-').replace(/^-|-$/g,'').slice(0,48)||'4d-chess';
+    a.href=url;a.download=`${title}-${recordDialogRecord.meta.Date.replace(/[^\d]/g,'')||'record'}.pgn4d`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
+    $('record-feedback').textContent='Download requested. Keep the .pgn4d file to import and replay this game later.';
+  }
+  async function copyRecord() {
+    updateRecordExport();if($('copy-record').disabled)return;
+    const text=$('record-text').value;
+    try {if(!navigator.clipboard?.writeText)throw new Error('Clipboard unavailable');await navigator.clipboard.writeText(text);$('record-feedback').textContent='Game record copied.';}
+    catch {const area=$('record-text');area.focus();area.select();let copied=false;try{copied=document.execCommand('copy');}catch{}$('record-feedback').textContent=copied?'Game record copied.':'Text selected. Use your browser’s Copy command, or download the file.';}
+  }
+  function cancelImport() {importVersion++;importWorker?.terminate();importWorker=null;clearTimeout(importTimer);importTimer=null;importPending=false;$('confirm-import').disabled=false;$('import-sample').disabled=false;$('import-dialog').setAttribute('aria-busy','false');}
+  function importFeedback(message,error=false) {$('import-feedback').textContent=message;$('import-feedback').className='import-feedback'+(error?' error':'');}
+  function openImport() {
+    if(inLesson()||inMate())return;
+    cancelComputer();stopAnimation();pauseReplay();cancelImport();$('import-text').value='';$('import-file').value='';importFeedback('Your live game stays untouched.');renderAll();$('import-dialog').showModal();
+  }
+  async function readImportFile() {
+    cancelImport();const version=importVersion,file=$('import-file').files?.[0];if(!file)return;
+    $('import-text').value='';
+    if(file.size>R.LIMIT_BYTES){importFeedback('The file is too large. Maximum size is 256 KiB.',true);return;}
+    importPending=true;$('confirm-import').disabled=true;importFeedback('Reading the selected file…');
+    try {
+      const text=new TextDecoder('utf-8',{fatal:true}).decode(await file.arrayBuffer());
+      if(version!==importVersion||!$('import-dialog').open)return;
+      importPending=false;$('confirm-import').disabled=false;
+      $('import-text').value=text;importFeedback(`Loaded ${file.name}. Select Import & replay to validate it.`);
+    } catch {if(version===importVersion){importPending=false;$('confirm-import').disabled=false;importFeedback('Could not read this file as UTF-8 text. Choose a .pgn4d text file.',true);}}
+  }
+  function validateImport() {
+    if(importPending)return;
+    cancelImport();const version=importVersion,text=$('import-text').value;
+    if(new TextEncoder().encode(text).length>R.LIMIT_BYTES){importFeedback('The record is too large. Maximum size is 256 KiB.',true);return;}
+    importPending=true;$('confirm-import').disabled=true;$('import-sample').disabled=true;$('import-dialog').setAttribute('aria-busy','true');importFeedback('Checking the starting position and every recorded move…');
+    const finish=(record,error)=>{
+      if(version!==importVersion||!$('import-dialog').open)return;
+      cancelImport();
+      if(error){importFeedback(error,true);return;}
+      importFeedback(`${record.moves.length} plies validated.`);startReplay(record,0,'import');notify(`Imported ${record.moves.length} plies. Your live game has not changed.`);
+    };
+    const fallback=()=>{if(version!==importVersion)return;importWorker?.terminate();importWorker=null;setTimeout(()=>{if(version!==importVersion)return;try{finish(R.importGame(text));}catch(error){finish(null,error.message);}},0);};
+    try {
+      const source=`const makeEngine=${createFourfoldEngine.toString()};const makeRecords=${createFourfoldRecords.toString()};const R=makeRecords(makeEngine());self.onmessage=e=>{try{self.postMessage({record:R.importGame(e.data)})}catch(error){self.postMessage({error:error.message})}};`;
+      const url=URL.createObjectURL(new Blob([source],{type:'text/javascript'}));try{importWorker=new Worker(url);}finally{URL.revokeObjectURL(url);}
+      importWorker.onmessage=e=>finish(e.data.record,e.data.error);importWorker.onerror=e=>{e.preventDefault();fallback();};importWorker.postMessage(text);
+      importTimer=setTimeout(()=>finish(null,'Validation did not finish. Check the file and try a shorter record.'),30000);
+    }catch{fallback();}
+  }
+  function sampleRecord() {
+    const moves=[{from:17,to:33},{from:45,to:33},{from:2,to:33},{from:59,to:55},{from:3,to:55},{from:58,to:55},{from:5,to:9},{from:60,to:9},{from:4,to:9},{from:61,to:28},{from:18,to:50},{from:55,to:50},{from:33,to:50},{from:62,to:38},{from:50,to:38},{from:63,to:31},{from:7,to:11},{from:46,to:30}];
+    return R.build(R.standardStart(),moves,{Event:'Across four boards · sample',White:'Demo White',Black:'Demo Black',Date:'????.??.??'});
+  }
+
   // Wire the application only after its 64 stable board buttons exist.
   buildBoards();restoreGame();result=E.outcome(board,turn,halfmove,keys);
   LESSONS.forEach((lesson,i)=>{
@@ -1306,7 +1729,7 @@ else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
   }));
   document.querySelectorAll('[data-try-lesson]').forEach(button=>button.addEventListener('click',()=>{$('rules-dialog').close();startLesson(Number(button.dataset.tryLesson));}));
   document.querySelectorAll('[data-interaction]').forEach(button=>button.addEventListener('click',()=>setInteraction(button.dataset.interaction)));
-  $('mode').addEventListener('change',event=>{cancelComputer();stopAnimation();mode=event.target.value;clearSelection();storeGame();renderAll();scheduleComputer();});
+  $('mode').addEventListener('change',event=>{if(inReplay())return;cancelComputer();stopAnimation();mode=event.target.value;clearSelection();storeGame();renderAll();scheduleComputer();});
   $('undo-button').addEventListener('click',undo);$('hint-button').addEventListener('click',giveHint);
   $('clear-selection').addEventListener('click',()=>{const previous=selected;clearSelection();renderAll();if(previous!==null)cells[previous].focus({preventScroll:true});});
   $('show-controls').addEventListener('change',event=>{showControls=event.target.checked;$('control-help').hidden=!showControls;renderBoard();spatial?.draw();});
@@ -1331,16 +1754,41 @@ else globalThis.FourfoldStudies=createFourfoldStudies(globalThis.Fourfold);
   });
   let resizeFrame=0;
   window.addEventListener('resize',()=>{cancelAnimationFrame(resizeFrame);resizeFrame=requestAnimationFrame(()=>{updateFlatRoutes();spatial?.draw();});});
-  document.addEventListener('visibilitychange',()=>{if(document.hidden)finishAnimation();});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden){pauseReplay();finishAnimation();}});
   reducedMotion.addEventListener('change',event=>{if(event.matches)finishAnimation();});
-  window.addEventListener('pagehide',()=>{cancelComputer();stopAnimation();});
+  window.addEventListener('pagehide',()=>{cancelImport();pauseReplay();cancelComputer();stopAnimation();});
+  $('open-record').addEventListener('click',()=>openRecord());
+  $('open-import').addEventListener('click',openImport);
+  $('replay-current').addEventListener('click',()=>{if(inReplay())seekReplay(0);else startReplay(liveRecord(),0,'current');});
+  $('exit-replay').addEventListener('click',()=>exitReplay());
+  $('replay-first').addEventListener('click',()=>seekReplay(0));
+  $('replay-prev').addEventListener('click',()=>{if(inReplay())seekReplay(replay.ply-1);});
+  $('replay-next').addEventListener('click',()=>{if(inReplay())seekReplay(replay.ply+1,true);});
+  $('replay-last').addEventListener('click',()=>{if(inReplay())seekReplay(replay.record.moves.length);});
+  $('replay-play').addEventListener('click',toggleReplay);
+  $('replay-scrubber').addEventListener('input',e=>seekReplay(Number(e.target.value)));
+  $('replay-speed').addEventListener('change',scheduleReplay);
+  $('continue-replay').addEventListener('click',continueReplay);
+  $('confirm-continue').addEventListener('click',confirmContinueReplay);
+  $('export-before-continue').addEventListener('click',()=>{if(!inReplay())return;$('continue-dialog').close();openRecord(savedLiveRecord(),'saved-live');});
+  for(const id of ['record-event','record-white','record-black'])$(id).addEventListener('input',()=>updateRecordExport());
+  $('download-record').addEventListener('click',downloadRecord);$('copy-record').addEventListener('click',copyRecord);
+  $('import-file').addEventListener('change',readImportFile);
+  $('import-text').addEventListener('input',()=>{cancelImport();importFeedback('Ready to validate. Your live game stays untouched.');});
+  $('confirm-import').addEventListener('click',validateImport);
+  $('import-sample').addEventListener('click',()=>{$('import-text').value=R.exportGame(sampleRecord());validateImport();});
+  $('import-dialog').addEventListener('close',()=>{cancelImport();scheduleComputer();});
+  $('record-dialog').addEventListener('close',()=>{recordDialogRecord=null;scheduleComputer();});
+  $('continue-dialog').addEventListener('close',()=>scheduleComputer());
+  // Pausing a replay for any dialog prevents moves from changing behind it.
+  for(const id of ['rules-button','keyboard-button','history-button'])$(id).addEventListener('click',()=>{if(inReplay())pauseReplay();});
   // Read-only diagnostics are also useful for embedding and automated regression tests.
-  const getState=()=>JSON.parse(JSON.stringify({board,turn,mode,interaction,moves:history.map(({from,to})=>({from,to})),halfmove,keys,selected,selectedMoves,pinnedTarget,captureRequest,lessonIndex,lessonDone,mateIndex,mateStage,mateSolved,mateProbe,mateAnalysis:mateAnalysis?{status:mateAnalysis.status,king:mateAnalysis.king,checkers:mateAnalysis.checkers,replies:mateAnalysis.replies,neighbors:mateAnalysis.neighbors,defenses:mateAnalysis.defenses}:null,result,thinking,animating:!!animation,threat:threat?{target:threat.target,attackers:threat.attackers,preview:threat.preview,legal:threat.legal}:null}));
+  const getState=()=>JSON.parse(JSON.stringify({replay:replay?{ply:replay.ply,total:replay.record.moves.length,playing:replay.playing,source:replay.source}:null,recordMeta:gameMeta,startFen:R.fen(gameStart),board,turn,mode,interaction,moves:history.map(({from,to})=>({from,to})),halfmove,keys,selected,selectedMoves,pinnedTarget,captureRequest,lessonIndex,lessonDone,mateIndex,mateStage,mateSolved,mateProbe,mateAnalysis:mateAnalysis?{status:mateAnalysis.status,king:mateAnalysis.king,checkers:mateAnalysis.checkers,replies:mateAnalysis.replies,neighbors:mateAnalysis.neighbors,defenses:mateAnalysis.defenses}:null,result,thinking,animating:!!animation,threat:threat?{target:threat.target,attackers:threat.attackers,preview:threat.preview,legal:threat.legal}:null}));
   const api={getState,studies:S.cases.map(c=>({index:c.index,id:c.id,title:c.title,kind:c.kind,move:c.move,mover:c.mover,defender:c.defender})),lessons:LESSONS.map(({title,from,to,kind},i)=>({index:i,title,from:E.index(from),to:to?E.index(to):null,kind:kind||'move'}))};
   // Custom fixtures are enabled only in explicitly requested test sessions.
   if(new URLSearchParams(location.search).has('test'))api.loadTestPosition=(b,c='w')=>{
     if(!Array.isArray(b)||b.length!==64||!['w','b'].includes(c)||['w','b'].some(color=>b.filter(p=>p?.c===color&&p.t==='k').length!==1))throw new Error('Fixture requires 64 squares and one king per color.');
-    cancelComputer();stopAnimation();mateIndex=null;mateSnapshot=null;mateProbe=null;mateAnalysis=null;lessonIndex=null;lessonDone=false;gameSnapshot=null;board=b;turn=c;mode='local';interaction='play';history=[];halfmove=0;keys=[E.key(board,turn)];result=E.outcome(board,turn,halfmove,keys);clearSelection();renderAll();
+    pauseReplay();replay=null;cancelComputer();stopAnimation();mateIndex=null;mateSnapshot=null;mateProbe=null;mateAnalysis=null;lessonIndex=null;lessonDone=false;gameSnapshot=null;gameStart={board:b,turn:c,halfmove:0,fullmove:1};gameMeta=R.defaults();board=b;turn=c;mode='local';interaction='play';history=[];halfmove=0;keys=[E.key(board,turn)];result=E.outcome(board,turn,halfmove,keys);clearSelection();renderAll();
   };
   globalThis.FourfoldApp=Object.freeze(api);
 })();
